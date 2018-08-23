@@ -1,0 +1,19 @@
+{
+    "name": "pxt-iotloranode",
+    "version": "0.0.0",
+    "description": "",
+    "dependencies": {
+        "core": "*",
+        "radio": "*"
+    },
+    "files": [
+        "README.md",
+        "main.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "public": false,
+    "additionalFilePaths": [],
+    "installedVersion": "workspace:06c65474-2329-4073-9c1b-bb561680da0b"
+}
