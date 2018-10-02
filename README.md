@@ -1,5 +1,4 @@
 # pxt-iotloranode
-[![Build Status](http://86.20.180.136:8080/buildStatus/icon?job=pxt-iot-lora-node)](http://86.20.180.136:8080/job/pxt-iot-lora-node/)
 [![Build Status](https://travis-ci.org/ryanteck/pxt-IoTLoRaNode.svg?branch=master)](https://travis-ci.org/ryanteck/pxt-IoTLoRaNode)
 
 
