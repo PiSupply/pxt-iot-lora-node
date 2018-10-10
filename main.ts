@@ -10,7 +10,7 @@ enum channels {
     Seven = "07",
     Eight = "08",
     Nine = "09",
-    Ten = "0A",
+    Ten = "0A"
 
 }
 
@@ -18,7 +18,7 @@ enum channels {
 
 namespace iotloranode {
     serial.redirect(SerialPin.P14, SerialPin.P15, BaudRate.BaudRate115200);
-
+    let payload = ""
 
     //%blockId="iotloranode_initialiseRadio" block="Initialise LoRa Radio: Device Address %deviceaddress|Network Session Key %netswk|App Session Key %appswk|SF %datarate"
     //% blockGap=8 
@@ -54,12 +54,13 @@ namespace iotloranode {
 
     }
     //%blockId="iotloranode_digitalValue"
-    //%block="Add Digital Value: %value to %x=variables_get(payloadData) on channel: %id"
-    export function digitalValue(value: boolean, x: string, id: channels): void {
+    //%block="Add Digital Value: %value on channel: %id"
+    export function digitalValue(value: boolean, chanNum: channels): void {
         /**
-         * Transmit Message
+         * Add digital message
          */
 
+        payload = payload + chanNum +"0001"
 
     }
     //%blockId="iotloranode_analogueValue" block="Add Analogue Value: %value"
@@ -72,7 +73,7 @@ namespace iotloranode {
 
     }
 
-    //%blockId="iotloranode_tempertureValue" block="Add Temperature Value: $temperatureVal to %x=variables_get(payloadData) on channel: %id"
+    //%blockId="iotloranode_tempertureValue" block="Add Temperature Value: $temperatureVal to %x=variables_get(text_payloadData) on channel: %id"
     export function tempertureValue(temperatureVal: number, x: string, id: channels): void {
         /**
          * Transmit Message
@@ -81,7 +82,7 @@ namespace iotloranode {
 
 
     }
-    //%blockId="iotloranode_humidityValue" block="Add Humidity Value: $message to %x=variables_get(payloadData) on channel: %id"
+    //%blockId="iotloranode_humidityValue" block="Add Humidity Value: $message to %x=variables_get(text_payloadData) on channel: %id"
     //%advanced=true
     export function humidityValue(message: string, id: channels): void {
         /**
@@ -90,7 +91,7 @@ namespace iotloranode {
 
 
     }
-    //%blockId="iotloranode_accelorometerValue" block="Add Accelerometer Value: $message to %x=variables_get(payloadData) on channel: %id"
+    //%blockId="iotloranode_accelorometerValue" block="Add Accelerometer Value: $message to %x=variables_get(text_payloadData) on channel: %id"
     export function accelorometerValue(message: string, x: string, id: channels): void {
         /**
          * Transmit Message
@@ -107,15 +108,17 @@ namespace iotloranode {
 
 
     }
-    //%blockId="iotloranode_transmitMessage" block="Transmit via LoRa Data %x=variables_get(payloadData)"
-    export function loraTransmitPayload(x: string): void {
+    //%blockId="iotloranode_transmitMessage" block="Transmit LoRa Data"
+    export function loraTransmitPayload(): void {
         /**
          * Transmit Message
          */
 
-        serial.writeString("at+send=0,1,67\r\n");
+        serial.writeString("at+send=0,1," + payload+"\r\n");
         basic.showString(serial.readUntil(serial.delimiters(Delimiters.NewLine)))
         basic.showString(serial.readUntil(serial.delimiters(Delimiters.NewLine)))
+        payload = "";
     }
+    
 
 }
