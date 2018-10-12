@@ -53,21 +53,22 @@ namespace iotloranode {
 
         serial.writeString("at+mode=0\r\n");
         serial.readLine()
-        //basic.showNumber(1)
+        
         serial.writeString("at+set_config=dev_addr:" + devaddress + "\r\n");
         serial.readLine()
-        //basic.showNumber(2)
+        
         serial.writeString("at+set_config=nwks_key:" + netswk + "\r\n");
         serial.readLine()
+
         serial.writeString("at+set_config=apps_key:" + appswk + "\r\n");
-        //basic.showNumber(6)
         serial.readLine()
+
         serial.writeString("at+set_config=dr:" + datarate + "\r\n");
-        basic.showNumber(8)
-        //serial.readLine()
-        serial.writeString("at+join=abp\r\n");
-        //basic.showNumber(9)
         serial.readLine()
+
+        serial.writeString("at+join=abp\r\n");
+        serial.readLine()
+        
         basic.showString("LoRa Ready")
 
 
