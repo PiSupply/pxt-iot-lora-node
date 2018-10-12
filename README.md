@@ -1,5 +1,5 @@
 # pxt-iotloranode
-[![Build Status](https://travis-ci.org/ryanteck/pxt-IoTLoRaNode.svg?branch=master)](https://travis-ci.org/ryanteck/pxt-IoTLoRaNode)
+[![Build Status](https://travis-ci.org/PiSupply/pxt-iot-lora-node.svg?branch=master)](https://travis-ci.org/ryanteck/pxt-IoTLoRaNode)
 
 
 ## TODO
@@ -8,7 +8,7 @@
 - [X] Add "icon.png" image (300x200) in the root folder
 - [X] Add "- beta" to the GitHub project description if you are still iterating it.
 - [X] Turn on your automated build on https://travis-ci.org
-- [ ] Use "pxt bump" to create a tagged release on GitHub
+- [ X] Use "pxt bump" to create a tagged release on GitHub
 - [ ] Get your package reviewed and approved https://makecode.microbit.org/packages/approval
 
 Read more at https://makecode.microbit.org/packages/build-your-own
