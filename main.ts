@@ -33,7 +33,7 @@ namespace iotloranode {
     serial.redirect(SerialPin.P14, SerialPin.P15, BaudRate.BaudRate115200);
     let payload = ""
 
-    //%blockId="iotloranode_initialiseRadio" block="Initialise LoRa Radio: Device Address %deviceaddress|Network Session Key %netswk|App Session Key %appswk|SF %datarate"
+    //%blockId="iotloranode_initialiseRadio" block="Initialise LoRa Radio:|Device Address %deviceaddress|Network Session Key %netswk|App Session Key %appswk|SF %datarate"
     //% blockGap=8 
     export function initialiseRadio(devaddress: string, netswk: string, appswk: string, datarate: spreadingFactors): void {
         /**
@@ -53,10 +53,10 @@ namespace iotloranode {
 
         serial.writeString("at+mode=0\r\n");
         serial.readLine()
-        
+
         serial.writeString("at+set_config=dev_addr:" + devaddress + "\r\n");
         serial.readLine()
-        
+
         serial.writeString("at+set_config=nwks_key:" + netswk + "\r\n");
         serial.readLine()
 
@@ -68,7 +68,7 @@ namespace iotloranode {
 
         serial.writeString("at+join=abp\r\n");
         serial.readLine()
-        
+
         basic.showString("LoRa Ready")
 
 
