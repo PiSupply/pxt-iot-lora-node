@@ -27,7 +27,7 @@ enum spreadingFactors {
 
 namespace iotloranode {
 
-//Cheat force
+    //Cheat force
 
 
     serial.redirect(SerialPin.P14, SerialPin.P15, BaudRate.BaudRate115200);
@@ -156,7 +156,7 @@ namespace iotloranode {
         serial.writeString("at+send=0,1," + payload + "\r\n");
         basic.showString(serial.readUntil(serial.delimiters(Delimiters.NewLine)))
         basic.showString(serial.readUntil(serial.delimiters(Delimiters.NewLine)))
-
+        payload = ""
     }
 
 
