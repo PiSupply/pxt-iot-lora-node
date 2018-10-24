@@ -13,6 +13,6 @@
     "testFiles": [
         "test.ts"
     ],
-    "public": false,
-    "installedVersion": "workspace:eb3a0bd2-0de0-4523-8f28-9148fd545791"
+    "public": true,
+    "installedVersion": "github:pisuply/pxt-iot-lora-node#v0.0.3"
 }
