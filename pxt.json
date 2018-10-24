@@ -14,5 +14,5 @@
         "test.ts"
     ],
     "public": true,
-    "installedVersion": "github:pisuply/pxt-iot-lora-node#v0.0.3"
+    "installedVersion": "github:pisupply/pxt-iot-lora-node#v0.0.3"
 }
