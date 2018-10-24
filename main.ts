@@ -27,7 +27,7 @@ enum spreadingFactors {
 
 namespace iotloranode {
 
-//Cheat force
+    //Cheat force
 
 
     serial.redirect(SerialPin.P14, SerialPin.P15, BaudRate.BaudRate115200);
