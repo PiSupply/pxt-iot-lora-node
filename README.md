@@ -1,5 +1,5 @@
 # pxt-iot-lora-node
-[![Build Status](https://travis-ci.org/PiSupply/pxt-iot-lora-node.svg?branch=master)](https://travis-ci.org/ryanteck/pxt-IoTLoRaNode)
+[![Build Status](https://travis-ci.org/PiSupply/pxt-iot-lora-node.svg?branch=master)](https://travis-ci.org/PiSupply/pxt-iot-lora-node)
 
 
 ## TODO
