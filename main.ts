@@ -25,7 +25,7 @@ enum spreadingFactors {
 
 //% weight=10 color=#8bc34a icon="\uf1eb"
 
-namespace iotloranode {
+namespace IoTLoRaNode {
 
     //Cheat force
 
