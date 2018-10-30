@@ -18,26 +18,39 @@ These blocks add Data to the payload, the payload is a string variable which get
 Each block can specifiy the "channel" that it is on, this is so when the decoder decodes it the sensor is on the same "channel" each time.
 Each sensor should be on its own unique channel between one to nine.
 #### Add Digital Value
+This block can add a digital value of either ```true``` or ```false```.
+
 ```sig
 IoTLoRaNode.digitalValue(false, channels.One)
 ```
+TTN will decode this value as a digital value of 1 or 0.
 
 #### Add Analogue Value
+This block can add an analogue value from `0` to `254`.
+
 ```sig
 IoTLoRaNode.analogueValue(0, channels.One)
 ```
+TTN Will decode this value as an analogue in with the decoded value displayed.
 
 #### Add Temperature Value
+This block will add an analogue value similar to the analogue value method. However once decoded will display in degrees C.
+
 ```sig
 IoTLoRaNode.tempertureValue(0, channels.One)
 ```
+TTN will decode this as a Degrees C value in the decoder.
 
 #### Add Light Value
+Similar to the Analogue & Temperature Values. This formats it as a light level value.
 ```sig
 IoTLoRaNode.lightValue(0, channels.One)
 ```
+TTN will decode this as a light level value in the decoder.
 
 ### Transmit LoRa Data
+This block is then used to transmit the payload, when run it will transmit the entire payload in the buffer.
+
 ```sig
 IoTLoRaNode.loraTransmitPayload()
 ```
