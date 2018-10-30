@@ -5,10 +5,25 @@
 
 ### Initialise LoRa Radio
 
+### Data Adders
+
+#### Add Digital Value
+```sig
+IoTLoRaNode.digitalValue(false, channels.One)
+```
+
+#### Add Analogue Value
+
+#### Add Temperature Value
+
+#### Add Light Value
+
+
+### Transmit LoRa Data
 
 ## TODO
 
-- [ ] Add a reference for your blocks here
+- [X] Add a reference for your blocks here
 - [X] Add "icon.png" image (300x200) in the root folder
 - [X] Add "- beta" to the GitHub project description if you are still iterating it.
 - [X] Turn on your automated build on https://travis-ci.org
