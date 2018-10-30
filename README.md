@@ -54,8 +54,16 @@ IoTLoRaNode.loraTransmitPayload()
 Read more at https://makecode.microbit.org/packages/build-your-own
 
 ## License
+This library is released under the GNU GPL V3 License, you can view the full license in the LICENSE file.
 
 
+## Meta
+
+Tutorials: [Maker Zone Micro:bit Page](http://learn.pi-supply.com/make)
+
+Questions? [Email us](mailto:sales@pi-supply.com)
+
+Keywords: tinkerkit, GVS, Pi Supply
 
 ## Supported targets
 
