@@ -4,22 +4,43 @@
 ## Blocks
 
 ### Initialise LoRa Radio
+```sig
+IoTLoRaNode.initialiseRadio(
+"Dev Address",
+"NWSK",
+"AppKey",
+spreadingFactors.Seven
+)
+```
 
 ### Data Adders
-
+These blocks add Data to the payload, the payload is a string variable which gets the correct byte values for the specified sensor with these blocks.
+Each block can specifiy the "channel" that it is on, this is so when the decoder decodes it the sensor is on the same "channel" each time.
+Each sensor should be on its own unique channel between one to nine.
 #### Add Digital Value
 ```sig
 IoTLoRaNode.digitalValue(false, channels.One)
 ```
 
 #### Add Analogue Value
+```sig
+IoTLoRaNode.analogueValue(0, channels.One)
+```
 
 #### Add Temperature Value
+```sig
+IoTLoRaNode.tempertureValue(0, channels.One)
+```
 
 #### Add Light Value
-
+```sig
+IoTLoRaNode.lightValue(0, channels.One)
+```
 
 ### Transmit LoRa Data
+```sig
+IoTLoRaNode.loraTransmitPayload()
+```
 
 ## TODO
 
