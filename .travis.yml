@@ -3,7 +3,7 @@ node_js:
     - "8.9.4"
 script:
     - "npm install -g pxt"
-    - "pxt target microbit"
+    - "pxt target microbit v1"
     - "pxt install"
     - "pxt build --cloud"
 sudo: false
