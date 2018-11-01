@@ -4,6 +4,10 @@
 ## Blocks
 
 ### Initialise LoRa Radio
+This block initialises the LoRa Radio module ready for use, it sets up the library and sends the commands to the RAK811 to configure it for use with the LoRaWAN Network.
+
+Currently the Makecode library only supports ABP Mode.
+
 ```sig
 IoTLoRaNode.initialiseRadio(
 "Dev Address",
@@ -12,6 +16,7 @@ IoTLoRaNode.initialiseRadio(
 spreadingFactors.Seven
 )
 ```
+You must fill out the Device Address, NWSK / Network Session Key & Application Session Key.you can find this from your LoRaWAN Provider. (Such as The Things Network).
 
 ### Data Adders
 These blocks add Data to the payload, the payload is a string variable which gets the correct byte values for the specified sensor with these blocks.
@@ -55,20 +60,9 @@ This block is then used to transmit the payload, when run it will transmit the e
 IoTLoRaNode.loraTransmitPayload()
 ```
 
-## TODO
-
-- [X] Add a reference for your blocks here
-- [X] Add "icon.png" image (300x200) in the root folder
-- [X] Add "- beta" to the GitHub project description if you are still iterating it.
-- [X] Turn on your automated build on https://travis-ci.org
-- [X] Use "pxt bump" to create a tagged release on GitHub
-- [ ] Get your package reviewed and approved https://makecode.microbit.org/packages/approval
-
-Read more at https://makecode.microbit.org/packages/build-your-own
 
 ## License
 This library is released under the GNU GPL V3 License, you can view the full license in the LICENSE file.
-
 
 ## Meta
 
@@ -76,7 +70,7 @@ Tutorials: [Maker Zone Micro:bit Page](http://learn.pi-supply.com/make)
 
 Questions? [Email us](mailto:sales@pi-supply.com)
 
-Keywords: tinkerkit, GVS, Pi Supply
+Keywords: LoRa, LoRaWAN, The Things Network, Pi Supply
 
 ## Supported targets
 
