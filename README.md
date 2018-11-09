@@ -1,4 +1,5 @@
 # pxt-iot-lora-node
+
 [![Build Status](https://travis-ci.org/PiSupply/pxt-iot-lora-node.svg?branch=master)](https://travis-ci.org/PiSupply/pxt-iot-lora-node)
 
 ## Blocks
@@ -60,6 +61,12 @@ This block is then used to transmit the payload, when run it will transmit the e
 IoTLoRaNode.loraTransmitPayload()
 ```
 
+##LoRaWAN Providers
+This package is designed to be used currently in LoRaWAN Mode only which means that your node has to be within range of a LoRaWAN Provider and for you to be signed up to that LoRaWAN Provider.
+
+We officially support these two providers and can provide support for them:
+- The Things Network
+- LoRIOT
 
 ## License
 This library is released under the GNU GPL V3 License, you can view the full license in the LICENSE file.
