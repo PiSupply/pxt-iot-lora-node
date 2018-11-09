@@ -86,7 +86,7 @@ namespace IotLoRaNode {
     }
     //%blockId="IotLoRaNode_DigitalValue"
     //%block="Add Digital Value: %value on channel: %chanNum"
-    export function DigitalValue(value: boolean, chanNum: channels): void {
+    export function DigitalValue(value: boolean, chanNum: Channels): void {
         /**
          * Add digital value
          */
@@ -96,7 +96,7 @@ namespace IotLoRaNode {
     }
     //%blockId="IotLoRaNode_AnalogueValue" block="Add Analogue Value: %value on channel: %chanNum"
     //% value.min=0 value.max=254
-    export function AnalogueValue(value: number, chanNum: channels): void {
+    export function AnalogueValue(value: number, chanNum: Channels): void {
         /**
          * Add analogue value
          */
@@ -109,7 +109,7 @@ namespace IotLoRaNode {
     }
 
     //%blockId="IotLoRaNode_tempertureValue" block="Add Temperature Value: $temperatureVal to channel: %id"
-    export function TempertureValue(temperatureVal: number, chanNum: channels): void {
+    export function TempertureValue(temperatureVal: number, chanNum: Channels): void {
         /**
          * Add temperature value
          */
@@ -122,7 +122,7 @@ namespace IotLoRaNode {
     }
     //%blockId="IotLoRaNode_HumidityValue" block="Add Humidity Value: $humidityVal to channel: %id"
     //%advanced=true
-    export function HumidityValue(humidityVal: number, chanNum: channels): void {
+    export function HumidityValue(humidityVal: number, chanNum: Channels): void {
         /**
          * Add humidity value
          */
@@ -148,7 +148,7 @@ namespace IotLoRaNode {
     **/
 
     //%blockId="IotLoRaNode_LightValue" block="Add light Value: $lightVal on channel: %id"
-    export function LightValue(lightVal: number, chanNum: channels): void {
+    export function LightValue(lightVal: number, chanNum: Channels): void {
         /**
          * Add light value
          */
