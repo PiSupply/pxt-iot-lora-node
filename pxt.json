@@ -1,10 +1,10 @@
 {
     "name": "IoTLoRaNode",
-    "version": "0.0.4",
-    "description": "",
+    "version": "0.1.0",
+    "description": "Package for Pi Supply IoT LoRa Node",
+    "license": "GPL V3",
     "dependencies": {
-        "core": "*",
-        "radio": "*"
+        "core": "*"
     },
     "files": [
         "README.md",
@@ -14,5 +14,5 @@
         "test.ts"
     ],
     "public": true,
-    "installedVersion": "github:pisupply/pxt-iot-lora-node#v0.0.3"
+
 }

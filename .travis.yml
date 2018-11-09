@@ -2,7 +2,7 @@ language: node_js
 node_js:
     - "8.9.4"
 script:
-    - "npm install -g pxt"
+    - "npm install -g pxt v1"
     - "pxt target microbit v1"
     - "pxt install"
     - "pxt build --cloud"
