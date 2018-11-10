@@ -77,11 +77,12 @@ We aim to with the help of the community translate this package to a variety of 
 
 Languages in bold have been translated and then checked by at least one person who speaks that language.
 Languages not in bold have been translated by us using translation software but requires checking.
+Languages in Italics are to be translated.
 - French
-- Dutch
-- Italian
-- German
-
+- *Dutch*
+- *Italian*
+- *German*
+- *Spanish*
 
 ## Meta
 

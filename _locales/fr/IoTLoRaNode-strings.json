@@ -5,7 +5,7 @@
   "IotLoRaNode.InitialiseRadio|block": "Initialiser la radio LoRa:|Adresse de l'appareil %deviceaddress|Clé de session réseau %netswk|Clé de session d'application %appswk|SF %datarate",
   "IotLoRaNode.LightValue|block": "Ajouter une valeur lumineuse: $lightVal on channel: %id",
   "IotLoRaNode.TempertureValue|block": "Ajouter une valeur de température: $temperatureVal to channel: %id",
-  "IotLoRaNode.loraTransmitPayload|block": "Transmit LoRa Data",
+  "IotLoRaNode.loraTransmitPayload|block": "Transmettre des données LoRa",
   "IotLoRaNode|block": "IotLoRaNode",
   "{id:category}IotLoRaNode": "IotLoRaNode"
 }
