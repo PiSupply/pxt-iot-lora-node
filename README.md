@@ -61,7 +61,8 @@ This block is then used to transmit the payload, when run it will transmit the e
 IoTLoRaNode.loraTransmitPayload()
 ```
 
-##LoRaWAN Providers
+## LoRaWAN Providers
+
 This package is designed to be used currently in LoRaWAN Mode only which means that your node has to be within range of a LoRaWAN Provider and for you to be signed up to that LoRaWAN Provider.
 
 We officially support these two providers and can provide support for them:
