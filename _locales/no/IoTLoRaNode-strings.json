@@ -1,11 +1,11 @@
 {
-  "IotLoRaNode.AnalogueValue|block": "Add Analogue Value: %value on channel: %chanNum",
-  "IotLoRaNode.DigitalValue|block": "Add Digital Value: %value on channel: %chanNum",
-  "IotLoRaNode.HumidityValue|block": "Add Humidity Value: $humidityVal to channel: %id",
-  "IotLoRaNode.InitialiseRadio|block": "Initialise LoRa Radio:|Device Address %deviceaddress|Network Session Key %netswk|App Session Key %appswk|SF %datarate",
-  "IotLoRaNode.LightValue|block": "Add light Value: $lightVal on channel: %id",
-  "IotLoRaNode.TempertureValue|block": "Add Temperature Value: $temperatureVal to channel: %id",
-  "IotLoRaNode.loraTransmitPayload|block": "Transmit LoRa Data",
+  "IotLoRaNode.AnalogueValue|block": "Legg til en analogverdi: %value på kanalen: %chanNum",
+  "IotLoRaNode.DigitalValue|block": "Legg til en digitalverdi: %value på kanalen: %chanNum",
+  "IotLoRaNode.HumidityValue|block": "Legg til luftfuktighet: $humidityVal på kanalen: %id",
+  "IotLoRaNode.InitialiseRadio|block": "Initialiser LoRa Radio:|Enhetsadresse %deviceaddress|Nettverkssesjonsnøkkel %netswk|Appsesjonsnøkkel %appswk|SF %datarate",
+  "IotLoRaNode.LightValue|block": "Legg til lysintensitet: $lightVal på kanalen: %id",
+  "IotLoRaNode.TempertureValue|block": "Legg til temperatur: $temperatureVal på kanalen: %id",
+  "IotLoRaNode.loraTransmitPayload|block": "Overfører LoRa Data",
   "IotLoRaNode|block": "IotLoRaNode",
   "{id:category}IotLoRaNode": "IotLoRaNode"
 }
