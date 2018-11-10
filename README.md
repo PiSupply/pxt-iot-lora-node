@@ -72,6 +72,17 @@ We officially support these two providers and can provide support for them:
 ## License
 This library is released under the GNU GPL V3 License, you can view the full license in the LICENSE file.
 
+## Translations
+We aim to with the help of the community translate this package to a variety of languages.
+
+Languages in bold have been translated and then checked by at least one person who speaks that language.
+Languages not in bold have been translated by us using translation software but requires checking.
+- French
+- Dutch
+- Italian
+- German
+
+
 ## Meta
 
 Tutorials: [Maker Zone Micro:bit Page](http://learn.pi-supply.com/make)
