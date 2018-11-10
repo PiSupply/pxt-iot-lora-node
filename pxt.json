@@ -12,6 +12,7 @@
         "_locales/de/IoTLoRaNode-strings.json",
         "_locales/fr/IoTLoRaNode-strings.json",
         "_locales/it/IoTLoRaNode-strings.json",
+        "_locales/no/IoTLoRaNode-strings.json",
         "_locales/nl/IoTLoRaNode-strings.json"
     ],
     "testFiles": [
