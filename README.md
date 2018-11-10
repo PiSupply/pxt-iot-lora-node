@@ -76,7 +76,7 @@ This library is released under the GNU GPL V3 License, you can view the full lic
 
 Tutorials: [Maker Zone Micro:bit Page](http://learn.pi-supply.com/make)
 
-Questions? [Email us](mailto:sales@pi-supply.com)
+Questions? [Email us](mailto:sales@pi-supply.com) or ask in our [Discord Server](https://pisupp.ly/chat)
 
 Keywords: LoRa, LoRaWAN, The Things Network, Pi Supply
 
