@@ -2,9 +2,9 @@
   "IotLoRaNode.AnalogueValue|block": "Füge analogen Wert hinzu: %value auf Kanal: %chanNum",
   "IotLoRaNode.DigitalValue|block": "Füge digitalen Wert hinzu: %value auf Kanal: %chanNum",
   "IotLoRaNode.HumidityValue|block": "Füge Luftfeuchtigkeit hinzu: $humidityVal auf Kanal: %id",
-  "IotLoRaNode.InitialiseRadio|block": "Initialisiere LoRa Radio: Gerätadresse %deviceaddress|Netzwerk Sitzungsschlüssel %netswk|Sitzungsschlüssel der Anwendung %appswk|SF %datarate",
-  "IotLoRaNode.LightValue|block": "Füge Helligkeitswert hinzu: $lightVal auf Kanal: %id",
-  "IotLoRaNode.TempertureValue|block": "Füge Temperaturwert hinzu: $temperatureVal auf Kanal: %id",
+  "IotLoRaNode.InitialiseRadio|block": "Initialisiere LoRa Radio: Geräteadresse %deviceaddress|Netzwerk Sitzungsschlüssel %netswk|Sitzungsschlüssel der Anwendung %appswk|SF %datarate",
+  "IotLoRaNode.LightValue|block": "Füge Lichtstärke hinzu: $lightVal auf Kanal: %id",
+  "IotLoRaNode.TempertureValue|block": "Füge Temperatur hinzu: $temperatureVal auf Kanal: %id",
   "IotLoRaNode.loraTransmitPayload|block": "Übertrage LoRa Daten",
   "IotLoRaNode|block": "IotLoRaNode",
   "{id:category}IotLoRaNode": "IotLoRaNode"
