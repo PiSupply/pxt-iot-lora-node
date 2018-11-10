@@ -1,6 +1,6 @@
 {
     "name": "IoTLoRaNode",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Package for Pi Supply IoT LoRa Node",
     "license": "GPL V3",
     "dependencies": {
@@ -8,7 +8,11 @@
     },
     "files": [
         "README.md",
-        "main.ts"
+        "main.ts",
+        "_locales/de/IoTLoRaNode-strings.json",
+        "_locales/fr/IoTLoRaNode-strings.json",
+        "_locales/it/IoTLoRaNode-strings.json",
+        "_locales/nl/IoTLoRaNode-strings.json"
     ],
     "testFiles": [
         "test.ts"
