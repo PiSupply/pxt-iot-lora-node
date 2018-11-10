@@ -1,10 +1,10 @@
 {
-  "IotLoRaNode.AnalogueValue|block": "Ajouter une valeur analogique: %value on channel: %chanNum",
-  "IotLoRaNode.DigitalValue|block": "Ajouter une valeur numérique: %value on channel: %chanNum",
-  "IotLoRaNode.HumidityValue|block": "Ajouter une valeur d'humidité: $humidityVal to channel: %id",
+  "IotLoRaNode.AnalogueValue|block": "Ajouter une valeur analogique: %value au canal: %chanNum",
+  "IotLoRaNode.DigitalValue|block": "Ajouter une valeur numérique: %value au canal: %chanNum",
+  "IotLoRaNode.HumidityValue|block": "Ajouter une valeur d'humidité: $humidityVal au canal: %id",
   "IotLoRaNode.InitialiseRadio|block": "Initialiser la radio LoRa:|Adresse de l'appareil %deviceaddress|Clé de session réseau %netswk|Clé de session d'application %appswk|SF %datarate",
-  "IotLoRaNode.LightValue|block": "Ajouter une valeur lumineuse: $lightVal on channel: %id",
-  "IotLoRaNode.TempertureValue|block": "Ajouter une valeur de température: $temperatureVal to channel: %id",
+  "IotLoRaNode.LightValue|block": "Ajouter une valeur lumineuse: $lightVal au canal: %id",
+  "IotLoRaNode.TempertureValue|block": "Ajouter une valeur de température: $temperatureVal au canal: %id",
   "IotLoRaNode.loraTransmitPayload|block": "Transmettre des données LoRa",
   "IotLoRaNode|block": "IotLoRaNode",
   "{id:category}IotLoRaNode": "IotLoRaNode"
