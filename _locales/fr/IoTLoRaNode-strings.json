@@ -6,8 +6,6 @@
   "IotLoRaNode.LightValue|block": "Ajouter une valeur lumineuse: $lightVal au canal: %id",
   "IotLoRaNode.TempertureValue|block": "Ajouter une valeur de température: $temperatureVal au canal: %id",
   "IotLoRaNode.loraTransmitPayload|block": "Transmettre des données LoRa",
-  "IotLoRaNode|block": "IotLoRaNode",
-  "{id:category}IotLoRaNode": "IotLoRaNode",
   "Channels.One|block": "Un",
   "Channels.Two|block": "Deux",
   "Channels.Three|block": "Trois",
@@ -22,5 +20,7 @@
   "SpreadingFactors.Nine|block": "Neuf",
   "SpreadingFactors.Ten|block": "Dix",
   "SpreadingFactors.Eleven|block": "Onze",
-  "SpreadingFactors.Twelve|block": "Douze"
+  "SpreadingFactors.Twelve|block": "Douze",
+  "IotLoRaNode|block": "IotLoRaNode",
+  "{id:category}IotLoRaNode": "IotLoRaNode"
 }
