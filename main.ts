@@ -17,23 +17,38 @@
 */
 
 enum Channels {
+    //% block="One"    
     One = 1,
+    //% block="Two"
     Two = 2,
+    //% block="Three"
     Three = 3,
+    //% block="Four"
     Four = 4,
+    //% block="Five"
     Five = 5,
+    //% block="Six"
     Six = 6,
+    //% block="Seven"
     Seven = 7,
+    //% block="Eight"
     Eight = 8,
+    //% block="Nine"
     Nine = 9
 
 }
 enum SpreadingFactors {
+    //% block="Seven"
     Seven = 5,
+    //% block="Eight"
     Eight = 4,
+    //% block="Nine"
     Nine = 3,
+    //% block="Ten"
     Ten = 2,
+    //% block="Eleven"
     Eleven = 1,
+    //% block="Twelve"
     Twelve = 0
 
 }
