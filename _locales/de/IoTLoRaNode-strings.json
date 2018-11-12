@@ -7,5 +7,20 @@
   "IotLoRaNode.TempertureValue|block": "Füge Temperatur hinzu: $temperatureVal auf Kanal: %id",
   "IotLoRaNode.loraTransmitPayload|block": "Übertrage LoRa Daten",
   "IotLoRaNode|block": "IotLoRaNode",
-  "{id:category}IotLoRaNode": "IotLoRaNode"
+  "{id:category}IotLoRaNode": "IotLoRaNode",
+  "Channels.One|block": "Eins",
+  "Channels.Two|block": "Zwei",
+  "Channels.Three|block": "Drei",
+  "Channels.Four|block": "Vier",
+  "Channels.Five|block": "Fünf",
+  "Channels.Six|block": "Sechs",
+  "Channels.Seven|block": "Sieben",
+  "Channels.Eigh|block": "Acht",
+  "Channels.Nine|block": "Neun",
+  "SpreadingFactors.Seven|block": "Sieben",
+  "SpreadingFactors.Eight|block": "Acht",
+  "SpreadingFactors.Nine|block": "Neun",
+  "SpreadingFactors.Ten|block": "Zehn",
+  "SpreadingFactors.Eleven|block": "Elf",
+  "SpreadingFactors.Twelve|block": "Zwölf"
 }
