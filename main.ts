@@ -54,6 +54,14 @@ enum SpreadingFactors {
 
 }
 
+enum region {
+    //% block="EU868"
+    EU868 = 1,
+    //% block="US915"
+    US915 = 2
+}
+
+
 
 //% weight=10 color=#8bc34a icon="\uf1eb"
 
@@ -71,16 +79,18 @@ namespace IotLoRaNode {
         pins.digitalWritePin(DigitalPin.P16, 1)
         basic.pause(100)
         pins.digitalWritePin(DigitalPin.P16, 0)
-        serial.readLine()
+
+        basic.showNumber(0)
+        basic.showString(serial.readLine())
+        basic.showString(serial.readLine())
+        basic.showString(serial.readLine())
 
         /**
          * For this we are only going to use ABP & LoRa WAN Modes for now
          */
-
+        basic.showNumber(1)
         //Set to use LoRaWAN Mode
         serial.writeString("at+mode=0\r\n");
-        serial.readLine()
-        serial.readLine()
         serial.readLine()
         //Set Device Address
         serial.writeString("at+set_config=dev_addr:" + devaddress + "\r\n");
@@ -185,6 +195,16 @@ namespace IotLoRaNode {
         serial.writeString("at+send=0,1," + payload + "\r\n");
         basic.showString(serial.readUntil(serial.delimiters(Delimiters.NewLine)))
         basic.showString(serial.readUntil(serial.delimiters(Delimiters.NewLine)))
+        payload = ""
+    }
+    //%blockId="IotLoRaNode_SetRegion" block="Set LoRa Region"
+    export function SetRegion(regionVal: region): void {
+        /**
+         * Transmit Message
+         */
+
+        serial.writeString("at+band=," + regionVal + "\r\n");
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
         payload = ""
     }
 
