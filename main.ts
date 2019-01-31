@@ -90,37 +90,37 @@ namespace IotLoRaNode {
          */
 
         //basic.showNumber(1)
-        basic.pause(50)
+        basic.pause(75)
         //Set to use LoRaWAN Mode
         serial.writeString("at+mode=0\r\n");
         serial.readLine()
 
         //basic.showNumber(2)
-        basic.pause(50)
+        basic.pause(75)
         //Set Device Address
         serial.writeString("at+set_config=dev_addr:" + devaddress + "\r\n");
         serial.readLine()
 
         //basic.showNumber(3)
-        basic.pause(50)
+        basic.pause(75)
         //Set the network session key
         serial.writeString("at+set_config=nwks_key:" + netswk + "\r\n");
         serial.readLine()
 
         //basic.showNumber(4)
-        basic.pause(50)
+        basic.pause(75)
         //Set the application session key
         serial.writeString("at+set_config=apps_key:" + appswk + "\r\n");
         serial.readLine()
 
         //basic.showNumber(5)
-        basic.pause(50)
+        basic.pause(75)
         //Set the data rate
         serial.writeString("at+set_config=dr:" + datarate + "\r\n");
         serial.readLine()
 
         //basic.showNumber(6)
-        basic.pause(50)
+        basic.pause(75)
         //"Join" the LoRaWAN Network in ABP Mode
         serial.writeString("at+join=abp\r\n");
         serial.readLine()
