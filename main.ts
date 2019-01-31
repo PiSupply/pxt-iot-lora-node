@@ -1,6 +1,6 @@
 /*
 * pxt-iot-lora node, Micro:Bit library for IoTLoRaNode
-* Copyright (C) 2018  Pi Supply
+* Copyright (C) 2018-2019  Pi Supply
 
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -14,7 +14,7 @@
 *
 * You should have received a copy of the GNU General Public License
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
-* Last Updated 2018-12-04-1
+* Last Updated 2019-01-31-1
 */
 
 enum Channels {
