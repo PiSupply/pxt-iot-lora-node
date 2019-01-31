@@ -14,7 +14,7 @@
 *
 * You should have received a copy of the GNU General Public License
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
-* Last Updated 2019-01-31-3
+* Last Updated 2019-01-31-2127
 */
 
 enum Channels {
@@ -77,36 +77,54 @@ namespace IotLoRaNode {
         * First we need to configure the serial port to use the pins and reset the radio
         */
         pins.digitalWritePin(DigitalPin.P16, 1)
-        basic.pause(100)
+        basic.pause(300)
         pins.digitalWritePin(DigitalPin.P16, 0)
+        serial.readLine()
+        serial.readLine()
+        serial.readLine()
 
-        basic.showNumber(0)
-        basic.showString(serial.readLine())
-        basic.showString(serial.readLine())
-        basic.showString(serial.readLine())
+        //basic.showNumber(0)
 
         /**
          * For this we are only going to use ABP & LoRa WAN Modes for now
          */
-        basic.showNumber(1)
+
+        //basic.showNumber(1)
+        basic.pause(50)
         //Set to use LoRaWAN Mode
         serial.writeString("at+mode=0\r\n");
         serial.readLine()
+
+        //basic.showNumber(2)
+        basic.pause(50)
         //Set Device Address
         serial.writeString("at+set_config=dev_addr:" + devaddress + "\r\n");
         serial.readLine()
+
+        //basic.showNumber(3)
+        basic.pause(50)
         //Set the network session key
         serial.writeString("at+set_config=nwks_key:" + netswk + "\r\n");
         serial.readLine()
+
+        //basic.showNumber(4)
+        basic.pause(50)
         //Set the application session key
         serial.writeString("at+set_config=apps_key:" + appswk + "\r\n");
         serial.readLine()
+
+        //basic.showNumber(5)
+        basic.pause(50)
         //Set the data rate
         serial.writeString("at+set_config=dr:" + datarate + "\r\n");
         serial.readLine()
+
+        //basic.showNumber(6)
+        basic.pause(50)
         //"Join" the LoRaWAN Network in ABP Mode
         serial.writeString("at+join=abp\r\n");
         serial.readLine()
+
         //Display on the screen that LoRa is ready.
         basic.showString("LoRa Ready")
 
