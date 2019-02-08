@@ -154,7 +154,7 @@ namespace IotLoRaNode {
 
     }
 
-    //%blockId="IotLoRaNode_tempertureValue" block="Add Temperature Value: $temperatureVal to channel: %id"
+    //%blockId="IotLoRaNode_tempertureValue" block="Add Temperature Value: %temperatureVal to channel: %chanNum"
     export function TempertureValue(temperatureVal: number, chanNum: Channels): void {
         /**
          * Add temperature value
@@ -166,7 +166,7 @@ namespace IotLoRaNode {
 
 
     }
-    //%blockId="IotLoRaNode_HumidityValue" block="Add Humidity Value: $humidityVal to channel: %id"
+    //%blockId="IotLoRaNode_HumidityValue" block="Add Humidity Value: %humidityVal to channel: %chanNum"
     //%advanced=true
     export function HumidityValue(humidityVal: number, chanNum: Channels): void {
         /**
@@ -180,7 +180,7 @@ namespace IotLoRaNode {
 
     }
     /**
-    * //%blockId="IotLoRaNode_AccelorometerValue" block="Add Accelerometer Value: $accelVal to channel: %id"
+    * //%blockId="IotLoRaNode_AccelorometerValue" block="Add Accelerometer Value: %accelVal to channel: %hanNum"
     *export function AccelorometerValue(accelVal: number, chanNum: channels): void {
     *    /**
     *     * Add accelorometer
@@ -193,7 +193,7 @@ namespace IotLoRaNode {
     *}
     **/
 
-    //%blockId="IotLoRaNode_LightValue" block="Add light Value: $lightVal on channel: %id"
+    //%blockId="IotLoRaNode_LightValue" block="Add light Value: %lightVal on channel: %chanNum"
     export function LightValue(lightVal: number, chanNum: Channels): void {
         /**
          * Add light value
@@ -215,7 +215,7 @@ namespace IotLoRaNode {
         basic.showString(serial.readUntil(serial.delimiters(Delimiters.NewLine)))
         payload = ""
     }
-    //%blockId="IotLoRaNode_SetRegion" block="Set LoRa Region"
+    //%blockId="IotLoRaNode_SetRegion" block="Set LoRa Region: %regionval"
     export function SetRegion(regionVal: region): void {
         /**
          * Transmit Message
