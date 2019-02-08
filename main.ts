@@ -154,8 +154,8 @@ namespace IotLoRaNode {
 
     }
 
-    //%blockId="IotLoRaNode_tempertureValue" block="Add Temperature Value: %temperatureVal to channel: %chanNum"
-    export function TempertureValue(temperatureVal: number, chanNum: Channels): void {
+    //%blockId="IotLoRaNode_temperatureValue" block="Add Temperature Value: %temperatureVal to channel: %chanNum"
+    export function TemperatureValue(temperatureVal: number, chanNum: Channels): void {
         /**
          * Add temperature value
          */
@@ -215,7 +215,7 @@ namespace IotLoRaNode {
         basic.showString(serial.readUntil(serial.delimiters(Delimiters.NewLine)))
         payload = ""
     }
-    //%blockId="IotLoRaNode_SetRegion" block="Set LoRa Region: %regionval"
+    //%blockId="IotLoRaNode_SetRegion" block="Set LoRa Region: %regionVal"
     export function SetRegion(regionVal: region): void {
         /**
          * Transmit Message
