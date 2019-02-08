@@ -23,5 +23,5 @@
   "SpreadingFactors.Ten|block": "Zehn",
   "SpreadingFactors.Eleven|block": "Elf",
   "SpreadingFactors.Twelve|block": "Zwölf"
-  "IotLoRaNode.SetRegion|block":"Setze LoRafrequenz auf: %regionVal"
+  "IotLoRaNode.SetRegion|block": "Setze LoRafrequenz auf: %regionVal"
 }
