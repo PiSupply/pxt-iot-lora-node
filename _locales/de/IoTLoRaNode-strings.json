@@ -1,10 +1,10 @@
 {
   "IotLoRaNode.AnalogueValue|block": "Füge analogen Wert hinzu: %value auf Kanal: %chanNum",
   "IotLoRaNode.DigitalValue|block": "Füge digitalen Wert hinzu: %value auf Kanal: %chanNum",
-  "IotLoRaNode.HumidityValue|block": "Füge Luftfeuchtigkeit hinzu: $humidityVal auf Kanal: %id",
+  "IotLoRaNode.HumidityValue|block": "Füge Luftfeuchtigkeit hinzu: %humidityVal auf Kanal: %chanNum",
   "IotLoRaNode.InitialiseRadio|block": "Initialisiere LoRa Radio: Geräteadresse %deviceaddress|Netzwerk Sitzungsschlüssel %netswk|Sitzungsschlüssel der Anwendung %appswk|SF %datarate",
-  "IotLoRaNode.LightValue|block": "Füge Lichtstärke hinzu: $lightVal auf Kanal: %id",
-  "IotLoRaNode.TemperatureValue|block": "Füge Temperatur hinzu: $temperatureVal auf Kanal: %id",
+  "IotLoRaNode.LightValue|block": "Füge Lichtstärke hinzu: %lightVal auf Kanal: %chanNum",
+  "IotLoRaNode.TemperatureValue|block": "Füge Temperatur hinzu: %temperatureVal auf Kanal: %chanNum",
   "IotLoRaNode.loraTransmitPayload|block": "Übertrage LoRa Daten",
   "IotLoRaNode|block": "IotLoRaNode",
   "{id:category}IotLoRaNode": "IotLoRaNode",
@@ -23,4 +23,5 @@
   "SpreadingFactors.Ten|block": "Zehn",
   "SpreadingFactors.Eleven|block": "Elf",
   "SpreadingFactors.Twelve|block": "Zwölf"
+  "IotLoRaNode.SetRegion|block":"Setze LoRafrequenz auf: %regionVal"
 }
