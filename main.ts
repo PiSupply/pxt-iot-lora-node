@@ -56,9 +56,9 @@ enum SpreadingFactors {
 
 enum region {
     //% block="EU868"
-    EU868 = 1,
+    EU868 = 0,
     //% block="US915"
-    US915 = 2
+    US915 = 1
 }
 
 
@@ -69,6 +69,7 @@ enum region {
 namespace IotLoRaNode {
     serial.redirect(SerialPin.P14, SerialPin.P15, BaudRate.BaudRate115200);
     let payload = ""
+    let regionsList: string[] = ["EU868", "US915"]
 
     //%blockId="IotLoRaNode_InitialiseRadio" block="Initialise LoRa Radio:|Device Address %deviceaddress|Network Session Key %netswk|App Session Key %appswk|SF %datarate"
     //% blockGap=8
@@ -218,12 +219,14 @@ namespace IotLoRaNode {
     //%blockId="IotLoRaNode_SetRegion" block="Set LoRa Region: %regionVal"
     export function SetRegion(regionVal: region): void {
         /**
-         * Transmit Message
+         * SetRegion
          */
+        
 
-        serial.writeString("at+band=," + regionVal + "\r\n");
+
+        serial.writeString("at+band=" + regionsList[regionVal] + "\r\n");
         serial.readUntil(serial.delimiters(Delimiters.NewLine))
-        payload = ""
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
     }
 
 
