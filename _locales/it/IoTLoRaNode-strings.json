@@ -4,7 +4,7 @@
   "IotLoRaNode.HumidityValue|block": "Add Humidity Value: $humidityVal to channel: %id",
   "IotLoRaNode.InitialiseRadio|block": "Initialise LoRa Radio:|Device Address %deviceaddress|Network Session Key %netswk|App Session Key %appswk|SF %datarate",
   "IotLoRaNode.LightValue|block": "Add light Value: $lightVal on channel: %id",
-  "IotLoRaNode.TempertureValue|block": "Add Temperature Value: $temperatureVal to channel: %id",
+  "IotLoRaNode.TemperatureValue|block": "Add Temperature Value: $temperatureVal to channel: %id",
   "IotLoRaNode.loraTransmitPayload|block": "Transmit LoRa Data",
   "IotLoRaNode|block": "IotLoRaNode",
   "{id:category}IotLoRaNode": "IotLoRaNode"
