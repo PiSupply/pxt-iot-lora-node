@@ -227,6 +227,12 @@ namespace IotLoRaNode {
         serial.writeString("at+band=" + regionsList[regionVal] + "\r\n");
         serial.readUntil(serial.delimiters(Delimiters.NewLine))
         serial.readUntil(serial.delimiters(Delimiters.NewLine))
+        pins.digitalWritePin(DigitalPin.P16, 1)
+        basic.pause(300)
+        pins.digitalWritePin(DigitalPin.P16, 0)
+        serial.readLine()
+        serial.readLine()
+        serial.readLine()
     }
 
 
