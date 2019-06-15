@@ -14,7 +14,7 @@
 *
 * You should have received a copy of the GNU General Public License
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
-* Last Updated 2019-01-31-2219
+* Last Updated 2019-06-15-1242
 */
 
 enum Channels {
@@ -212,8 +212,8 @@ namespace IotLoRaNode {
          */
 
         serial.writeString("at+send=0,1," + payload + "\r\n");
-        basic.showString(serial.readUntil(serial.delimiters(Delimiters.NewLine)))
-        basic.showString(serial.readUntil(serial.delimiters(Delimiters.NewLine)))
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
         payload = ""
     }
     //%blockId="IotLoRaNode_SetRegion" block="Set LoRa Region: %regionVal"
@@ -221,7 +221,7 @@ namespace IotLoRaNode {
         /**
          * SetRegion
          */
-        
+
 
         pins.digitalWritePin(DigitalPin.P16, 1)
         basic.pause(300)
