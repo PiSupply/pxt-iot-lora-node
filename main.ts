@@ -213,7 +213,9 @@ namespace IotLoRaNode {
 
         serial.writeString("at+send=0,1," + payload + "\r\n");
         serial.readUntil(serial.delimiters(Delimiters.NewLine))
+        basic.pause(100)
         serial.readUntil(serial.delimiters(Delimiters.NewLine))
+        basic.pause(100)
         payload = ""
     }
     //%blockId="IotLoRaNode_SetRegion" block="Set LoRa Region: %regionVal"
@@ -239,6 +241,10 @@ namespace IotLoRaNode {
         serial.readLine()
         serial.readLine()
         serial.readLine()
+
+
+
+        basic.showIcon(IconNames.Yes)
     }
 
 
