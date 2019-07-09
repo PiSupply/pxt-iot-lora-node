@@ -247,5 +247,15 @@ namespace IotLoRaNode {
         basic.showIcon(IconNames.Yes)
     }
 
+    //%blockId="IotLoRaNode_SleepMode" block="Sleep Mode"
+    export function loraSleepMode(): void {
+        /**
+         * Sleep Mode
+         */
+
+        serial.writeString("at+");
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
+    }
+
 
 }
