@@ -256,6 +256,15 @@ namespace IotLoRaNode {
         serial.writeString("at+");
         serial.readUntil(serial.delimiters(Delimiters.NewLine))
     }
+    //%blockId="IotLoRaNode_WakeUp" block="Wake from Sleep" advanced=true
+    export function loraWakeUp(): void {
+        /**
+         * Sleep Mode
+         */
+
+        serial.writeString("at+");
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
+    }
 
 
 }
