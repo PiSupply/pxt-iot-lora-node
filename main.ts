@@ -247,7 +247,7 @@ namespace IotLoRaNode {
         basic.showIcon(IconNames.Yes)
     }
 
-    //%blockId="IotLoRaNode_SleepMode" block="Sleep Mode"
+    //%blockId="IotLoRaNode_SleepMode" block="Sleep Mode" advanced=true
     export function loraSleepMode(): void {
         /**
          * Sleep Mode
