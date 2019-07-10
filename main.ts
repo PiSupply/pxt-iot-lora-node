@@ -235,7 +235,6 @@ namespace IotLoRaNode {
         serial.writeString("at+band=" + regionsList[regionVal] + "\r\n");
        serial.readUntil(serial.delimiters(Delimiters.NewLine))
         basic.showIcon(IconNames.Diamond)
-        serial.readUntil(serial.delimiters(Delimiters.NewLine)) //getting stuck here
         pins.digitalWritePin(DigitalPin.P16, 1)
         basic.pause(300)
         pins.digitalWritePin(DigitalPin.P16, 0)
