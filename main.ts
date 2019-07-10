@@ -232,9 +232,6 @@ namespace IotLoRaNode {
         serial.readLine()
         serial.readLine()
         basic.pause(75)
-
-
-        basic.showNumber(0)
         serial.writeString("at+band=" + regionsList[regionVal] + "\r\n");
        serial.readUntil(serial.delimiters(Delimiters.NewLine))
         basic.showIcon(IconNames.Diamond)
