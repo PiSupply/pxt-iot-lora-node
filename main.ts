@@ -71,9 +71,9 @@ namespace IotLoRaNode {
     let payload = ""
     let regionsList: string[] = ["EU868", "US915"]
 
-    //%blockId="IotLoRaNode_InitialiseRadio" block="Initialise LoRa Radio:|Device Address %deviceaddress|Network Session Key %netswk|App Session Key %appswk|SF %datarate"
+    //%blockId="IotLoRaNode_InitialiseRadioABP" block="Initialise LoRa Radio via ABP:|Device Address %deviceaddress|Network Session Key %netswk|App Session Key %appswk|SF %datarate"
     //% blockGap=8
-    export function InitialiseRadio(devaddress: string, netswk: string, appswk: string, datarate: SpreadingFactors): void {
+    export function InitialiseRadioABP(devaddress: string, netswk: string, appswk: string, datarate: SpreadingFactors): void {
         /**
         * First we need to configure the serial port to use the pins and reset the radio
         */
@@ -131,6 +131,66 @@ namespace IotLoRaNode {
 
 
     }
+
+    //%blockId="IotLoRaNode_InitialiseRadioOTAA" block="Initialise LoRa Radio via OTAA:|Device Eui %deveui|App EUI %appeui|App Key %appkey"
+    //% blockGap=8
+    export function InitialiseRadioOTAA(deveui: string, appeui: string, appkey: string): void {
+        /**
+        * First we need to configure the serial port to use the pins and reset the radio
+        */
+        pins.digitalWritePin(DigitalPin.P16, 1)
+        basic.pause(300)
+        pins.digitalWritePin(DigitalPin.P16, 0)
+        serial.readLine()
+        serial.readLine()
+        serial.readLine()
+
+        //basic.showNumber(0)
+
+        /**
+         * For this we are only going to use ABP & LoRa WAN Modes for now
+         */
+
+        //basic.showNumber(1)
+        basic.pause(75)
+        //Set to use LoRaWAN Mode
+        serial.writeString("at+mode=0\r\n");
+        serial.readLine()
+
+        //basic.showNumber(2)
+        basic.pause(75)
+        //Set Device Address
+        serial.writeString("at+set_config=dev_eui:" + deveui + "\r\n");
+        serial.readLine()
+
+        //basic.showNumber(3)
+        basic.pause(75)
+        //Set the network session key
+        serial.writeString("at+set_config=app_eui:" + appeui + "\r\n");
+        serial.readLine()
+
+        //basic.showNumber(4)
+        basic.pause(75)
+        //Set the application session key
+        serial.writeString("at+set_config=app_key:" + appkey + "\r\n");
+        serial.readLine()
+
+
+
+        //basic.showNumber(6)
+        basic.pause(75)
+        //"Join" the LoRaWAN Network in ABP Mode
+        serial.writeString("at+join=abp\r\n");
+        serial.readLine()
+
+        //Display on the screen that LoRa is ready.
+        basic.showString("LoRa Ready")
+
+
+    }
+
+
+
     //%blockId="IotLoRaNode_DigitalValue"
     //%block="Add Digital Value: %value on channel: %chanNum"
     export function DigitalValue(value: boolean, chanNum: Channels): void {
