@@ -233,7 +233,7 @@ namespace IotLoRaNode {
         serial.readLine()
         basic.pause(75)
         serial.writeString("at+band=" + regionsList[regionVal] + "\r\n");
-       serial.readUntil(serial.delimiters(Delimiters.NewLine))
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
         basic.showIcon(IconNames.Diamond)
         pins.digitalWritePin(DigitalPin.P16, 1)
         basic.pause(300)
@@ -242,6 +242,20 @@ namespace IotLoRaNode {
         serial.readLine()
         serial.readLine()
         basic.showIcon(IconNames.Yes)
+        basic.showNumber(1)
+        if (regionsList[regionVal] == "US915") {
+            serial.writeString("at+set_config=ch_mask:0,FF00\r\n");
+            basic.pause(75)
+            serial.writeString("at+set_config=ch_mask:1,0000\r\n");
+            basic.pause(75)
+            serial.writeString("at+set_config=ch_mask:2,0000\r\n");
+            basic.pause(75)
+            serial.writeString("at+set_config=ch_mask:3,0000\r\n");
+            basic.pause(75)
+            serial.writeString("at+set_config=ch_mask:4,0000\r\n");
+            basic.pause(75)
+        }
+        basic.showNumber(2)
     }
 
     //%blockId="IotLoRaNode_SleepMode" block="Sleep Mode" advanced=true
