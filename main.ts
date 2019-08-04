@@ -132,7 +132,7 @@ namespace IotLoRaNode {
 
     }
 
-    //%blockId="IotLoRaNode_InitialiseRadioOTAA" block="Initialise LoRa Radio via OTAA:|Device Eui %deveui|App EUI %appeui|App Key %appkey"
+    //%blockId="IotLoRaNode_InitialiseRadioOTAA" block="Initialise LoRa Radio via OTAA:|Device Eui %deveui|App EUI %appeui|App Key %appkey" advanced=true
     //% blockGap=8
     export function InitialiseRadioOTAA(deveui: string, appeui: string, appkey: string): void {
         /**
@@ -175,12 +175,15 @@ namespace IotLoRaNode {
         serial.writeString("at+set_config=app_key:" + appkey + "\r\n");
         serial.readLine()
 
-
+        basic.pause(75)
+        //Set the data rate
+        serial.writeString("at+set_config=dr:0\r\n");
+        serial.readLine()
 
         //basic.showNumber(6)
         basic.pause(75)
         //"Join" the LoRaWAN Network in ABP Mode
-        serial.writeString("at+join=abp\r\n");
+        serial.writeString("at+join=otaa\r\n");
         serial.readLine()
 
         //Display on the screen that LoRa is ready.
@@ -305,14 +308,19 @@ namespace IotLoRaNode {
         basic.showNumber(1)
         if (regionsList[regionVal] == "US915") {
             serial.writeString("at+set_config=ch_mask:0,FF00\r\n");
+            serial.readLine()
             basic.pause(75)
             serial.writeString("at+set_config=ch_mask:1,0000\r\n");
+            serial.readLine()
             basic.pause(75)
             serial.writeString("at+set_config=ch_mask:2,0000\r\n");
+            serial.readLine()
             basic.pause(75)
             serial.writeString("at+set_config=ch_mask:3,0000\r\n");
+            serial.readLine()
             basic.pause(75)
             serial.writeString("at+set_config=ch_mask:4,0000\r\n");
+            serial.readLine()
             basic.pause(75)
         }
         basic.showNumber(2)
