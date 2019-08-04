@@ -305,7 +305,7 @@ namespace IotLoRaNode {
         serial.readLine()
         serial.readLine()
         basic.showIcon(IconNames.Yes)
-        basic.showNumber(1)
+        //basic.showNumber(1)
         if (regionsList[regionVal] == "US915") {
             serial.writeString("at+set_config=ch_mask:0,FF00\r\n");
             serial.readLine()
@@ -323,7 +323,7 @@ namespace IotLoRaNode {
             serial.readLine()
             basic.pause(75)
         }
-        basic.showNumber(2)
+        //basic.showNumber(2)
     }
 
     //%blockId="IotLoRaNode_SleepMode" block="Sleep Mode" advanced=true
