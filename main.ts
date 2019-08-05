@@ -73,7 +73,7 @@ namespace IotLoRaNode {
 
     //%blockId="IotLoRaNode_InitialiseRadioABP" block="Initialise LoRa Radio via ABP:|Device Address %deviceaddress|Network Session Key %netswk|App Session Key %appswk|SF %datarate"
     //% blockGap=8
-    export function InitialiseRadioABP(devaddress: string, netswk: string, appswk: string, datarate: SpreadingFactors): void {
+    export function InitialiseRadio(devaddress: string, netswk: string, appswk: string, datarate: SpreadingFactors): void {
         /**
         * First we need to configure the serial port to use the pins and reset the radio
         */
