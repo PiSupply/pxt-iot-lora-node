@@ -274,10 +274,15 @@ namespace IotLoRaNode {
         /**
          * Add light value
          */
-        //let bufr = pins.createBuffer(2);
-        //bufr.setNumber(NumberFormat.Int16BE, 0, (lightVal))
+        let bufr = pins.createBuffer(9);
+        bufr.setNumber(NumberFormat.Int32BE, 0, (latitude * 10000));
+        bufr.setNumber(NumberFormat.Int32BE, 3, (longitude * 10000));
+        bufr.setNumber(NumberFormat.Int32BE, 6, (altitude * 100));
+        serial.writeNumber(latitude);
+        serial.writeNumber(longitude);
+        serial.writeNumber(altitude);
+        //payload = payload + "0" + chanNum + "88" + bufr.toHex();
 
-        //payload = payload + "0" + chanNum + "65" + bufr.toHex();
 
     }
 
