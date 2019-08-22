@@ -268,6 +268,19 @@ namespace IotLoRaNode {
         payload = payload + "0" + chanNum + "65" + bufr.toHex();
 
     }
+
+    //%blockId="IotLoRaNode_GPS" block="Add GPS Value - Lattiude: %latitude, Longitude %longitude, Altitude %altitude on channel: %chanNum"
+    export function GPS(latitude: number, longitude: number, altitude: number, chanNum: Channels): void {
+        /**
+         * Add light value
+         */
+        //let bufr = pins.createBuffer(2);
+        //bufr.setNumber(NumberFormat.Int16BE, 0, (lightVal))
+
+        //payload = payload + "0" + chanNum + "65" + bufr.toHex();
+
+    }
+
     //%blockId="IotLoRaNode_TransmitMessage" block="Transmit LoRa Data"
     export function loraTransmitPayload(): void {
         /**
