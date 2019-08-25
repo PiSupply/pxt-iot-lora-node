@@ -281,10 +281,9 @@ namespace IotLoRaNode {
         lonBuf.setNumber(NumberFormat.Int32BE, -1, longitude * 10000)
         let altBuf = pins.createBuffer(3);
         altBuf.setNumber(NumberFormat.Int32BE, -1, altitude * 100)
-        payload = "" + latBuf.toHex() + lonBuf.toHex() + altBuf.toHex()
-        console.log(payload)
+
         payload = payload + "0" + chanNum + "88" + latBuf.toHex() + lonBuf.toHex() + altBuf.toHex();
-       
+
 
 
     }
