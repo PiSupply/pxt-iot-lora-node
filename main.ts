@@ -272,9 +272,8 @@ namespace IotLoRaNode {
     //%blockId="IotLoRaNode_GPS" block="Add GPS Value - Lattiude: %latitude, Longitude %longitude, Altitude %altitude on channel: %chanNum"
     export function GPS(latitude: number, longitude: number, altitude: number, chanNum: Channels): void {
         /**
-         * Add light value
+         * Add GPS value
          */
-        let payload = ""
         let latBuf = pins.createBuffer(3);
         latBuf.setNumber(NumberFormat.Int32BE, -1, latitude * 10000)
         let lonBuf = pins.createBuffer(3);
