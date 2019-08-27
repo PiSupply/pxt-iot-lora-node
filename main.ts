@@ -275,16 +275,17 @@ namespace IotLoRaNode {
          * Add GPS value
          */
         let latBuf = pins.createBuffer(4);
-        latBuf.setNumber(NumberFormat.Int32BE, 0, 52.1581 * 10000)
+        latBuf.setNumber(NumberFormat.Int32BE, 0, longitude * 10000)
         let latBuf2 = latBuf.slice(1, 4);
+
         let lonBuf = pins.createBuffer(4);
-        lonBuf.setNumber(NumberFormat.Int32BE, 0, 1.2541 * 10000)
-        let lonBuf2 = latBuf.slice(1, 4);
+        lonBuf.setNumber(NumberFormat.Int32BE, 0, latitude * 10000)
+        let lonBuf2 = lonBuf.slice(1, 4);
         let altBuf = pins.createBuffer(4);
-        altBuf.setNumber(NumberFormat.Int32BE, 0, 10.1 * 100)
+        altBuf.setNumber(NumberFormat.Int32BE, 0, altitude * 100)
         let altBuf2 = altBuf.slice(1, 4);
-        payload = "" + payload + "0" + "1" + "88" + latBuf2.toHex() + lonBuf2.toHex() + altBuf2.toHex()
-        serial.writeLine(payload)
+        payload = "" + payload + "0" + chanNum + "88" + lonBuf2.toHex() + latBuf2.toHex() + altBuf2.toHex()
+
 
 
 
