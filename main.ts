@@ -269,7 +269,7 @@ namespace IotLoRaNode {
 
     }
 
-    //%blockId="IotLoRaNode_GPS" block="Add GPS Value - Lattiude: %latitude, Longitude %longitude, Altitude %altitude on channel: %chanNum"
+    //%blockId="IotLoRaNode_GPS" block="Add GPS Value - Latitude: %latitude, Longitude %longitude, Altitude %altitude on channel: %chanNum"
     export function GPS(latitude: number, longitude: number, altitude: number, chanNum: Channels): void {
         /**
          * Add GPS value
