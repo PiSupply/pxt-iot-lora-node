@@ -95,7 +95,7 @@ enum region {
 namespace IotLoRaNode {
     serial.redirect(SerialPin.P14, SerialPin.P15, BaudRate.BaudRate115200);
     let payload = ""
-    let regionsList: string[] = ["EU868", "US915", "AU915", "AS92X"]
+    let regionsList: string[] = ["EU868", "US915", "AU915", "AS920"]
 
     //%blockId="IotLoRaNode_InitialiseRadioABP" block="Initialise LoRa Radio via ABP:|Device Address %deviceaddress|Network Session Key %netswk|App Session Key %appswk|SF %datarate"
     //% blockGap=8
