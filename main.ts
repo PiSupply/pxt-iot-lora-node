@@ -294,19 +294,21 @@ namespace IotLoRaNode {
 
 
     }
-    /**
-    * //%blockId="IotLoRaNode_AccelorometerValue" block="Add Accelerometer Value: %accelVal to channel: %hanNum"
-    *export function AccelorometerValue(accelVal: number, chanNum: channels): void {
-    *    /**
-    *     * Add accelorometer
-         *
-    *    let bufr = pins.createBuffer(2);
-    *    bufr.setNumber(NumberFormat.Int16BE, 0, (accelVal * 100))
-    *
-    *   payload = payload + "0" + chanNum + "02" + bufr.toHex();
-    *
-    *}
-    **/
+    
+     //%blockId="IotLoRaNode_AccelorometerValue" block="Add Accelerometer Value- X: %accelValX, Y: %accelValY, Z: %accelValZ,  to channel: %hanNum"
+    export function AccelorometerValue(accelValX: number, accelValY: number, accelValZ: number, chanNum: Channels): void {
+        /**
+         * Add accelorometer
+         */
+        let bufr = pins.createBuffer(6);
+        bufr.setNumber(NumberFormat.Int16BE, 0, (accelValX * 100))
+        bufr.setNumber(NumberFormat.Int16BE, 2, (accelValY * 100))
+        bufr.setNumber(NumberFormat.Int16BE, 4, (accelValZ * 100))
+    
+       payload = payload + "0" + chanNum + "71" + bufr.toHex();
+    
+    }
+    
 
     //%blockId="IotLoRaNode_LightValue" block="Add light Value: %lightVal on channel: %chanNum"
     export function LightValue(lightVal: number, chanNum: Channels): void {
