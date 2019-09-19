@@ -287,15 +287,15 @@ namespace IotLoRaNode {
         /**
          * Add humidity value
          */
-        let bufr = pins.createBuffer(2);
-        bufr.setNumber(NumberFormat.Int16BE, 0, (humidityVal * 100))
+        let bufr = pins.createBuffer(1);
+        bufr.setNumber(NumberFormat.Int8BE, 0, (humidityVal * 100))
 
-        payload = payload + "0" + chanNum + "68" + bufr.toHex();
+        payload = payload + "0" + chanNum + "680" + bufr.toHex();
 
 
     }
-    
-     //%blockId="IotLoRaNode_AccelorometerValue" block="Add Accelerometer Value - X: %accelValX , Y: %accelValY , Z: %accelValZ ,  to channel: %hanNum"
+
+    //%blockId="IotLoRaNode_AccelorometerValue" block="Add Accelerometer Value - X: %accelValX , Y: %accelValY , Z: %accelValZ ,  to channel: %hanNum"
     export function AccelorometerValue(accelValX: number, accelValY: number, accelValZ: number, chanNum: Channels): void {
         /**
          * Add accelorometer
@@ -304,11 +304,11 @@ namespace IotLoRaNode {
         bufr.setNumber(NumberFormat.Int16BE, 0, (accelValX * 100))
         bufr.setNumber(NumberFormat.Int16BE, 2, (accelValY * 100))
         bufr.setNumber(NumberFormat.Int16BE, 4, (accelValZ * 100))
-    
-       payload = payload + "0" + chanNum + "71" + bufr.toHex();
-    
+
+        payload = payload + "0" + chanNum + "71" + bufr.toHex();
+
     }
-    
+
 
     //%blockId="IotLoRaNode_LightValue" block="Add light Value: %lightVal on channel: %chanNum"
     export function LightValue(lightVal: number, chanNum: Channels): void {
