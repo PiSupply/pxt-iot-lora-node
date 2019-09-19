@@ -257,7 +257,7 @@ namespace IotLoRaNode {
 
     }
 
-    //%blockId="IotLoRaNode_barometerValue" block="Add Temperature Value: %temperatureVal to channel: %chanNum"
+    //%blockId="IotLoRaNode_barometerValue" block="Add Barometer Value: %barometerVal to channel: %chanNum"
     export function BarometerValue(barometerVal: number, chanNum: Channels): void {
         /**
          * Add barometer value
