@@ -295,7 +295,7 @@ namespace IotLoRaNode {
 
     }
     
-     //%blockId="IotLoRaNode_AccelorometerValue" block="Add Accelerometer Value- X: %accelValX, Y: %accelValY, Z: %accelValZ,  to channel: %hanNum"
+     //%blockId="IotLoRaNode_AccelorometerValue" block="Add Accelerometer Value - X: %accelValX , Y: %accelValY , Z: %accelValZ ,  to channel: %hanNum"
     export function AccelorometerValue(accelValX: number, accelValY: number, accelValZ: number, chanNum: Channels): void {
         /**
          * Add accelorometer
