@@ -288,7 +288,7 @@ namespace IotLoRaNode {
          * Add humidity value
          */
         let bufr = pins.createBuffer(1);
-        bufr.setNumber(NumberFormat.UInt8BE, 0, (humidityVal * 100))
+        bufr.setNumber(NumberFormat.UInt8BE, 0, (humidityVal * 2))
 
         payload = payload + "0" + chanNum + "68" + bufr.toHex();
 
