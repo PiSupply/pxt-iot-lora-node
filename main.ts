@@ -58,7 +58,11 @@ enum region {
     //% block="EU868"
     EU868 = 0,
     //% block="US915"
-    US915 = 1
+    US915 = 1,
+    //% block="AU915"
+    AU915 = 2,
+    //% block="AS92X"
+    AS92X = 3
 }
 
 
@@ -69,7 +73,7 @@ enum region {
 namespace IotLoRaNode {
     serial.redirect(SerialPin.P14, SerialPin.P15, BaudRate.BaudRate115200);
     let payload = ""
-    let regionsList: string[] = ["EU868", "US915"]
+    let regionsList: string[] = ["EU868", "US915", "AU915", "AS92X"]
 
     //%blockId="IotLoRaNode_InitialiseRadioABP" block="Initialise LoRa Radio via ABP:|Device Address %deviceaddress|Network Session Key %netswk|App Session Key %appswk|SF %datarate"
     //% blockGap=8
@@ -230,6 +234,31 @@ namespace IotLoRaNode {
 
 
     }
+
+    //%blockId="IotLoRaNode_barometerValue" block="Add Temperature Value: %temperatureVal to channel: %chanNum"
+    export function BarometerValue(barometerVal: number, chanNum: Channels): void {
+        /**
+         * Add barometer value
+         */
+        let bufr = pins.createBuffer(2);
+        bufr.setNumber(NumberFormat.Int16BE, 0, (barometerVal * 10))
+
+        payload = payload + "0" + chanNum + "73" + bufr.toHex();
+
+
+    }
+
+    //%blockId="IotLoRaNode_PresenceSensor"
+    //%block="Add Presence Sensor: %value on channel: %chanNum"
+    export function PresenceSensor(value: boolean, chanNum: Channels): void {
+        /**
+         * Add presence value
+         */
+        let intVal = value ? 1 : 0;
+        payload = payload + "0" + chanNum + "660" + intVal;
+
+    }
+
     //%blockId="IotLoRaNode_HumidityValue" block="Add Humidity Value: %humidityVal to channel: %chanNum"
     //%advanced=true
     export function HumidityValue(humidityVal: number, chanNum: Channels): void {
@@ -268,6 +297,8 @@ namespace IotLoRaNode {
         payload = payload + "0" + chanNum + "65" + bufr.toHex();
 
     }
+
+
 
     //%blockId="IotLoRaNode_GPS" block="Add GPS Value - Latitude: %latitude Longitude %longitude Altitude %altitude on channel: %chanNum"
     //% blockGap=8
