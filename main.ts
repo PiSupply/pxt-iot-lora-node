@@ -402,6 +402,24 @@ namespace IotLoRaNode {
             serial.readLine()
             basic.pause(75)
         }
+
+        else if (regionsList[regionVal] == "AU915") {
+            serial.writeString("at+set_config=ch_mask:0,FF00\r\n");
+            serial.readLine()
+            basic.pause(75)
+            serial.writeString("at+set_config=ch_mask:1,0000\r\n");
+            serial.readLine()
+            basic.pause(75)
+            serial.writeString("at+set_config=ch_mask:2,0000\r\n");
+            serial.readLine()
+            basic.pause(75)
+            serial.writeString("at+set_config=ch_mask:3,0000\r\n");
+            serial.readLine()
+            basic.pause(75)
+            serial.writeString("at+set_config=ch_mask:4,0000\r\n");
+            serial.readLine()
+            basic.pause(75)
+        }
         //basic.showNumber(2)
     }
 
