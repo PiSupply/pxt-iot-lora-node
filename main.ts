@@ -489,7 +489,7 @@ namespace IotLoRaNode {
 
         let gpioVal = state ? 1 : 0;
         serial.writeString("at+gpio=" + pinNum + "," + gpioVal);
-        serial.readUntil(serial.delimiters(Delimiters.NewLine))
+        basic.showString(serial.readUntil(serial.delimiters(Delimiters.NewLine)))
     }
 
     //%blockId="IotLoRaNode_GPIORead" block="Read GPIO Digital" advanced=true block="Read GPIO Pin Digital:|Pin Number %pinNum"
