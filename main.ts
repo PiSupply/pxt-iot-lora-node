@@ -102,7 +102,7 @@ enum GPIOPins {
     PB8 = 18,
     //% block="PB9"
     PB9 = 19,
-    //% block="PA15"
+    //% block="PA2"
     PA2 = 20
 
 }
@@ -118,11 +118,11 @@ enum ADCPins {
     PB3 = 15,
     //% block="PB5"
     PB5 = 16,
-    //% block="PA15"
+    //% block="PB8"
     PB8 = 18,
     //% block="PB9"
     PB9 = 19,
-    //% block="PA15"
+    //% block="PA2"
     PA2 = 20
 
 }
@@ -508,7 +508,7 @@ namespace IotLoRaNode {
          * GPIO ADC
          */
 
-        serial.writeString("at+rd_adco=" + pinNum + "\r\n");
+        serial.writeString("at+rd_adc=" + pinNum + "\r\n");
         basic.showString(serial.readUntil(serial.delimiters(Delimiters.NewLine)))
     }
 
