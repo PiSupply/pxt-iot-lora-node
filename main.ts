@@ -108,20 +108,6 @@ enum GPIOPins {
 }
 
 enum ADCPins {
-    //% block="PA13"
-    PA13 = 10,
-    //% block="PA14"
-    PA14 = 13,
-    //% block="PA15"
-    PA15 = 14,
-    //% block="PB3"
-    PB3 = 15,
-    //% block="PB5"
-    PB5 = 16,
-    //% block="PB8"
-    PB8 = 18,
-    //% block="PB9"
-    PB9 = 19,
     //% block="PA2"
     PA2 = 20
 
@@ -493,23 +479,25 @@ namespace IotLoRaNode {
     }
 
     //%blockId="IotLoRaNode_GPIORead" block="Read GPIO Digital" advanced=true block="Read GPIO Pin Digital:|Pin Number %pinNum"
-    export function loraGPIORead(pinNum: GPIOPins): void {
+    export function loraGPIORead(pinNum: GPIOPins): boolean {
         /**
          * GPIO Read
          */
 
         serial.writeString("at+gpio=" + pinNum + "\r\n");
         basic.showString(serial.readUntil(serial.delimiters(Delimiters.NewLine)))
+        return false;
     }
 
     //%blockId="IotLoRaNode_GPIOAdc" block="Read GPIO ADC" advanced=true block="Read GPIO Pin Analogue:|Pin Number %pinNum"
-    export function loraGPIOAdc(pinNum: ADCPins): void {
+    export function loraGPIOAdc(pinNum: ADCPins): number {
         /**
          * GPIO ADC
          */
 
         serial.writeString("at+rd_adc=" + pinNum + "\r\n");
         basic.showString(serial.readUntil(serial.delimiters(Delimiters.NewLine)))
+        return 4096;
     }
 
 
