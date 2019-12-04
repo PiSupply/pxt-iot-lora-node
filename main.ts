@@ -498,8 +498,8 @@ namespace IotLoRaNode {
         let value = 0
         serial.writeString("at+rd_adc=" + pinNum + "\r\n");
         value = parseInt(serial.readUntil(serial.delimiters(Delimiters.NewLine)).substr(2))
-        
-        return 4096;
+
+        return value;
     }
 
 
