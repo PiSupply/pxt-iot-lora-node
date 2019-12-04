@@ -468,7 +468,7 @@ namespace IotLoRaNode {
          * Sleep Mode
          */
 
-        serial.writeString("at+sleep");
+        serial.writeString("at+sleep\r\n");
         serial.readUntil(serial.delimiters(Delimiters.NewLine))
     }
     //%blockId="IotLoRaNode_WakeUp" block="Wake from Sleep" advanced=true 
@@ -488,7 +488,7 @@ namespace IotLoRaNode {
          */
 
         let gpioVal = state ? 1 : 0;
-        serial.writeString("at+gpio=" + pinNum + "," + gpioVal);
+        serial.writeString("at+gpio=" + pinNum + "," + gpioVal + "\r\n");
         basic.showString(serial.readUntil(serial.delimiters(Delimiters.NewLine)))
     }
 
@@ -498,7 +498,7 @@ namespace IotLoRaNode {
          * GPIO Read
          */
 
-        serial.writeString("at+gpio=" + pinNum);
+        serial.writeString("at+gpio=" + pinNum + "\r\n");
         serial.readUntil(serial.delimiters(Delimiters.NewLine))
     }
 
@@ -508,7 +508,7 @@ namespace IotLoRaNode {
          * GPIO ADC
          */
 
-        serial.writeString("at+rd_adco=" + pinNum);
+        serial.writeString("at+rd_adco=" + pinNum + "\r\n");
         serial.readUntil(serial.delimiters(Delimiters.NewLine))
     }
 
