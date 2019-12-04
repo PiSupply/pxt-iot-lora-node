@@ -471,7 +471,7 @@ namespace IotLoRaNode {
         serial.writeString("at+sleep");
         serial.readUntil(serial.delimiters(Delimiters.NewLine))
     }
-    //%blockId="IotLoRaNode_WakeUp" block="Wake from Sleep" advanced=true
+    //%blockId="IotLoRaNode_WakeUp" block="Wake from Sleep" advanced=true 
     export function loraWakeUp(): void {
         /**
          * Sleep Mode
@@ -481,7 +481,7 @@ namespace IotLoRaNode {
         serial.readUntil(serial.delimiters(Delimiters.NewLine))
     }
 
-    //%blockId="IotLoRaNode_GPIOWrite" block="Write GPIO" advanced=true
+    //%blockId="IotLoRaNode_GPIOWrite" block="Write GPIO" advanced=true block="Write GPIO Pin Digital:|Pin Number %pinNum|State %state"
     export function loraGPIOWrite(pinNum: GPIOPins, state: boolean): void {
         /**
          * GPIO Write
@@ -492,7 +492,7 @@ namespace IotLoRaNode {
         serial.readUntil(serial.delimiters(Delimiters.NewLine))
     }
 
-    //%blockId="IotLoRaNode_GPIORead" block="Read GPIO Digital" advanced=true
+    //%blockId="IotLoRaNode_GPIORead" block="Read GPIO Digital" advanced=true block="Read GPIO Pin Digital:|Pin Number %pinNum"
     export function loraGPIORead(pinNum: GPIOPins): void {
         /**
          * GPIO Read
@@ -502,7 +502,7 @@ namespace IotLoRaNode {
         serial.readUntil(serial.delimiters(Delimiters.NewLine))
     }
 
-    //%blockId="IotLoRaNode_GPIOAdc" block="Read GPIO ADC" advanced=true
+    //%blockId="IotLoRaNode_GPIOAdc" block="Read GPIO ADC" advanced=true block="Read GPIO Pin Analogue:|Pin Number %pinNum"
     export function loraGPIOAdc(pinNum: ADCPins): void {
         /**
          * GPIO ADC
