@@ -98,7 +98,7 @@ enum GPIOPins {
     PB3 = 15,
     //% block="PB5"
     PB5 = 16,
-    //% block="PA15"
+    //% block="PB8"
     PB8 = 18,
     //% block="PB9"
     PB9 = 19,
