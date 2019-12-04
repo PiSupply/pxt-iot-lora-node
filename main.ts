@@ -87,6 +87,45 @@ enum region {
     AS92X = 3
 }
 
+enum GPIOPins {
+    //% block="PA13"
+    PA13 = 10,
+    //% block="PA14"
+    PA14 = 13,
+    //% block="PA15"
+    PA15 = 14,
+    //% block="PB3"
+    PB3 = 15,
+    //% block="PB5"
+    PB5 = 16,
+    //% block="PA15"
+    PB8 = 18,
+    //% block="PB9"
+    PB9 = 19,
+    //% block="PA15"
+    PA2 = 20
+
+}
+
+enum ADCPins {
+    //% block="PA13"
+    PA13 = 10,
+    //% block="PA14"
+    PA14 = 13,
+    //% block="PA15"
+    PA15 = 14,
+    //% block="PB3"
+    PB3 = 15,
+    //% block="PB5"
+    PB5 = 16,
+    //% block="PA15"
+    PB8 = 18,
+    //% block="PB9"
+    PB9 = 19,
+    //% block="PA15"
+    PA2 = 20
+
+}
 
 
 //% weight=10 color=#8bc34a icon="\uf1eb"
@@ -443,7 +482,7 @@ namespace IotLoRaNode {
     }
 
     //%blockId="IotLoRaNode_GPIOWrite" block="Write GPIO" advanced=true
-    export function loraGPIOWrite(pinNum: number, state: boolean): void {
+    export function loraGPIOWrite(pinNum: GPIOPins, state: boolean): void {
         /**
          * GPIO Write
          */
@@ -453,8 +492,8 @@ namespace IotLoRaNode {
         serial.readUntil(serial.delimiters(Delimiters.NewLine))
     }
 
-    //%blockId="IotLoRaNode_GPIOWrite" block="Read GPIO Digital" advanced=true
-    export function loraGPIORead(pinNum: number): void {
+    //%blockId="IotLoRaNode_GPIORead" block="Read GPIO Digital" advanced=true
+    export function loraGPIORead(pinNum: GPIOPins): void {
         /**
          * GPIO Read
          */
@@ -463,13 +502,13 @@ namespace IotLoRaNode {
         serial.readUntil(serial.delimiters(Delimiters.NewLine))
     }
 
-    //%blockId="IotLoRaNode_GPIOWrite" block="Read GPIO ADC" advanced=true
-    export function loraGPIOAdc(pinNum: number): void {
+    //%blockId="IotLoRaNode_GPIOAdc" block="Read GPIO ADC" advanced=true
+    export function loraGPIOAdc(pinNum: ADCPins): void {
         /**
          * GPIO ADC
          */
 
-        serial.writeString("at+rd_adco=" + pinNum );
+        serial.writeString("at+rd_adco=" + pinNum);
         serial.readUntil(serial.delimiters(Delimiters.NewLine))
     }
 
