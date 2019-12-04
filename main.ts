@@ -448,7 +448,8 @@ namespace IotLoRaNode {
          * GPIO Write
          */
 
-        serial.writeString("at+gpio");
+        let gpioVal = state ? 1 : 0;
+        serial.writeString("at+gpio=" + pinNum + "," + gpioVal);
         serial.readUntil(serial.delimiters(Delimiters.NewLine))
     }
 
@@ -458,7 +459,7 @@ namespace IotLoRaNode {
          * GPIO Read
          */
 
-        serial.writeString("at+gpio");
+        serial.writeString("at+gpio=" + pinNum);
         serial.readUntil(serial.delimiters(Delimiters.NewLine))
     }
 
@@ -468,7 +469,7 @@ namespace IotLoRaNode {
          * GPIO ADC
          */
 
-        serial.writeString("at+rd_adc");
+        serial.writeString("at+rd_adco=" + pinNum );
         serial.readUntil(serial.delimiters(Delimiters.NewLine))
     }
 
