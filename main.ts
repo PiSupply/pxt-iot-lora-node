@@ -490,20 +490,7 @@ namespace IotLoRaNode {
         return gpioVal;
     }
 
-    //%blockId="IotLoRaNode_GPIOAdc" block="Read GPIO ADC" advanced=true block="Read GPIO Pin Analogue:|Pin Number %pinNum"
-    export function loraGPIOAdc(pinNum: ADCPins): number {
-        /**
-         * GPIO ADC
-         */
-
-        serial.writeString("at+rd_adc=" + pinNum + "\r\n");
-
-        let serialBack = serial.readUntil(serial.delimiters(Delimiters.NewLine))
-        basic.showNumber(parseInt(serialBack.substr(2)))
-
-
-        return 0;
-    }
+    
 
 
 
