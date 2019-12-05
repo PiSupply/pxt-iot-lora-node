@@ -483,11 +483,15 @@ namespace IotLoRaNode {
         /**
          * GPIO Read
          */
-        let value = 0
+        let boolVal = false;
         serial.writeString("at+gpio=" + pinNum + "\r\n");
-        value = parseInt(serial.readUntil(serial.delimiters(Delimiters.NewLine)).substr(2))
-        basic.showNumber(value)
-        let boolVal = value ? true : false;
+        let value = serial.readUntil(serial.delimiters(Delimiters.NewLine)).substr(2)
+        if(value == "1") {
+             boolVal = true;
+        }
+        else {
+            boolVal = false;
+        }
         return boolVal;
     }
 
@@ -496,12 +500,12 @@ namespace IotLoRaNode {
         /**
          * GPIO ADC
          */
-        
+
         serial.writeString("at+rd_adc=" + pinNum + "\r\n");
 
         let serialBack = serial.readUntil(serial.delimiters(Delimiters.NewLine))
         basic.showNumber(parseInt(serialBack.substr(2)))
-       
+
 
         return 0;
     }
