@@ -500,6 +500,7 @@ namespace IotLoRaNode {
         let cutdown = serial.readUntil(serial.delimiters(Delimiters.NewLine)).substr(2)
         value = parseInt(cutdown)
         basic.showString(cutdown)
+        basic.showString(value.toString())
 
         return value;
     }
