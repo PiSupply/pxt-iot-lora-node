@@ -497,12 +497,12 @@ namespace IotLoRaNode {
          */
         let value = 0
         serial.writeString("at+rd_adc=" + pinNum + "\r\n");
-        let cutdown = serial.readUntil(serial.delimiters(Delimiters.NewLine)).substr(2)
-        value = parseInt(cutdown)
-        basic.showString(cutdown)
-        basic.showString(value.toString())
 
-        return value;
+        let serialBack = serial.readUntil(serial.delimiters(Delimiters.NewLine))
+        basic.showString(serialBack)
+        basic.showString(serialBack.substr(2))
+
+        return 0;
     }
 
 
