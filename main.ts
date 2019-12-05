@@ -485,9 +485,10 @@ namespace IotLoRaNode {
          */
         let boolVal = false;
         serial.writeString("at+gpio=" + pinNum + "\r\n");
-        let value = serial.readUntil(serial.delimiters(Delimiters.NewLine)).substr(2)
-        if(value == "1") {
-             boolVal = true;
+        let value = serial.readUntil(serial.delimiters(Delimiters.NewLine)).charAt(2)
+        basic.showString(value)
+        if (value == "1") {
+            boolVal = true;
         }
         else {
             boolVal = false;
