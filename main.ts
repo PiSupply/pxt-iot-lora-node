@@ -495,12 +495,12 @@ namespace IotLoRaNode {
         /**
          * GPIO ADC
          */
-        let value = 0
+        
         serial.writeString("at+rd_adc=" + pinNum + "\r\n");
 
         let serialBack = serial.readUntil(serial.delimiters(Delimiters.NewLine))
-        basic.showString(serialBack)
-        basic.showString(serialBack.substr(2))
+        basic.showNumber(parseInt(serialBack.substr(2)))
+       
 
         return 0;
     }
