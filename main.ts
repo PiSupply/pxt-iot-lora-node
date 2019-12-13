@@ -553,28 +553,61 @@ namespace IotLoRaNode {
 
     }
 
-    //%blockId="IotLoRaNode_rfconfig" block="Configure LoRa P2P:|Frequency %frequency|Spreading Factor %spreadingfactor|Bandwidth %bandwidth|Coding Rate %codingRate|Preamlen %preamlen|Transmission Pwr %power
+    //%blockId="IotLoRaNode_rfconfig" block="Configure LoRa P2P:|Frequency %frequency|Spreading Factor %spreadingfactor|Bandwidth %bandwidth|Coding Rate %codingRate|Preamlen %preamlen|Transmission Pwr %power"
     //% blockGap=8
     export function rfconfig(frequency: number, spreadingfactor: SpreadingFactors, bandwidth: number, codingRate: CodingRates, preamlen: number, power: number): void {
-        //basic.showNumber(0)
 
-        /**
-         * For this we are only going to use ABP & LoRa WAN Modes for now
-         */
-
-        //basic.showNumber(1)
         basic.pause(75)
         //Set to use LoRaWAN Mode
-        serial.writeString("at+mode=0\r\n");
+        serial.writeString("at+rf_config="+frequency+","+spreadingfactor+","+bandwidth+","+codingRate+","+preamlen+","+power+"\r\n");
         serial.readLine()
 
+    }
 
-
-        //Display on the screen that LoRa is ready.
-        basic.showString("LoRa Ready")
-
+    //%blockId="IotLoRaNode_txc" block="LoRa P2P Continous transmit:|Count %count|Interval %interval|Data %data"
+    //% blockGap=8
+    export function txc(count: number, interval: number, data: string): void {
+     
+        basic.pause(75)
+        //Set to use LoRaWAN Mode
+        serial.writeString("at+txc="+count+","+interval+","+data+"\r\n");
+        serial.readLine()
 
     }
+
+    //%blockId="IotLoRaNode_rxc" block="LoRa P2P Continous Receive"
+    export function rxc(): void {
+
+        basic.pause(75)
+        //Set to use LoRaWAN Mode
+        serial.writeString("at+rxc\r\n");
+        serial.readLine()
+
+    }
+
+    //%blockId="IotLoRaNode_txstop" block="Stop P2P TX"
+    //% blockGap=8
+    export function txstop(): void {
+
+        basic.pause(75)
+        //Set to use LoRaWAN Mode
+        serial.writeString("at+txstop\r\n");
+        serial.readLine()
+
+    }
+
+    //%blockId="IotLoRaNode_rxstop" block="Stop P2P RX"
+    //% blockGap=8
+    export function rxstop(): void {
+
+        basic.pause(75)
+        //Set to use LoRaWAN Mode
+        serial.writeString("at+rxstop\r\n");
+        serial.readLine()
+
+    }
+
+
 
 
 
