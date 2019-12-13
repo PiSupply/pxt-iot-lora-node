@@ -607,6 +607,17 @@ namespace IotLoRaNode {
 
     }
 
+    //%blockId="IotLoRaNode_spreadingFactor" advanced=true block="Set SF: %spreadingFactor"
+    //% blockGap=8
+    export function IotLoRaNode_spreadingFactor(spreadingfactor: SpreadingFactors): void {
+
+        basic.pause(75)
+        //Set to use LoRaWAN Mode
+        serial.writeString("at+set_config=dr:" + spreadingfactor + "\r\n");
+        serial.readLine()
+
+    }
+
 
 
 
