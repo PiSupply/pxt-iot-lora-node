@@ -523,7 +523,7 @@ namespace IotLoRaNode {
         return 0;
     }
 
-    //%blockId="IotLoRaNode_InitialiseRadioP2P" block="Initialise LoRa Radio for P2P"
+    //%blockId="IotLoRaNode_InitialiseRadioP2P" block="Initialise LoRa Radio for P2P" advanced=true
     //% blockGap=8
     export function InitialiseRadioP2P(): void {
         /**
@@ -553,7 +553,7 @@ namespace IotLoRaNode {
 
     }
 
-    //%blockId="IotLoRaNode_rfconfig" block="Configure LoRa P2P:|Frequency %frequency|Spreading Factor %spreadingfactor|Bandwidth %bandwidth|Coding Rate %codingRate|Preamlen %preamlen|Transmission Pwr %power"
+    //%blockId="IotLoRaNode_rfconfig" advanced=true block="Configure LoRa P2P:|Frequency %frequency|Spreading Factor %spreadingfactor|Bandwidth %bandwidth|Coding Rate %codingRate|Preamlen %preamlen|Transmission Pwr %power"
     //% blockGap=8
     export function rfconfig(frequency: number, spreadingfactor: SpreadingFactors, bandwidth: number, codingRate: CodingRates, preamlen: number, power: number): void {
 
@@ -564,7 +564,7 @@ namespace IotLoRaNode {
 
     }
 
-    //%blockId="IotLoRaNode_txc" block="LoRa P2P Continous transmit:|Count %count|Interval %interval|Data %data"
+    //%blockId="IotLoRaNode_txc" advanced=true block="LoRa P2P Continous transmit:|Count %count|Interval %interval|Data %data"
     //% blockGap=8
     export function txc(count: number, interval: number, data: string): void {
      
@@ -575,7 +575,7 @@ namespace IotLoRaNode {
 
     }
 
-    //%blockId="IotLoRaNode_rxc" block="LoRa P2P Continous Receive"
+    //%blockId="IotLoRaNode_rxc" advanced=true block="LoRa P2P Continous Receive"
     export function rxc(): void {
 
         basic.pause(75)
@@ -585,7 +585,7 @@ namespace IotLoRaNode {
 
     }
 
-    //%blockId="IotLoRaNode_txstop" block="Stop P2P TX"
+    //%blockId="IotLoRaNode_txstop" advanced=true block="Stop P2P TX"
     //% blockGap=8
     export function txstop(): void {
 
@@ -596,7 +596,7 @@ namespace IotLoRaNode {
 
     }
 
-    //%blockId="IotLoRaNode_rxstop" block="Stop P2P RX"
+    //%blockId="IotLoRaNode_rxstop" advanced=true block="Stop P2P RX"
     //% blockGap=8
     export function rxstop(): void {
 
