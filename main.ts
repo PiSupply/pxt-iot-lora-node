@@ -76,6 +76,18 @@ enum SpreadingFactors {
 
 }
 
+enum CodingRates {
+    //% block="4/5"
+    "4/5" = 1,
+    //% block="4/6"
+    "4/6" = 1,
+    //% block="4/7"
+    "4/7" = 1,
+    //% block="4/8"
+    "4/8" = 1
+
+}
+
 enum region {
     //% block="EU868"
     EU868 = 0,
@@ -511,7 +523,60 @@ namespace IotLoRaNode {
         return 0;
     }
 
-    
+    //%blockId="IotLoRaNode_InitialiseRadioP2P" block="Initialise LoRa Radio for P2P"
+    //% blockGap=8
+    export function InitialiseRadioP2P(): void {
+        /**
+        * First we need to configure the serial port to use the pins and reset the radio
+        */
+        pins.digitalWritePin(DigitalPin.P16, 1)
+        basic.pause(300)
+        pins.digitalWritePin(DigitalPin.P16, 0)
+        serial.readLine()
+        serial.readLine()
+        serial.readLine()
+
+        //basic.showNumber(0)
+
+        /**
+         * For this we are only going to use ABP & LoRa WAN Modes for now
+         */
+
+        //basic.showNumber(1)
+        basic.pause(75)
+        //Set to use LoRaWAN Mode
+        serial.writeString("at+mode=1\r\n");
+        serial.readLine()
+        //Display on the screen that LoRa is ready.
+        basic.showString("P2P Ready")
+
+
+    }
+
+    //%blockId="IotLoRaNode_rfconfig" block="Configure LoRa P2P:|Frequency %frequency|Spreading Factor %spreadingfactor|Bandwidth %bandwidth|Coding Rate %codingRate|Preamlen %preamlen|Transmission Pwr %power
+    //% blockGap=8
+    export function rfconfig(frequency: number, spreadingfactor: SpreadingFactors, bandwidth: number, codingRate: CodingRates, preamlen: number, power: number): void {
+        //basic.showNumber(0)
+
+        /**
+         * For this we are only going to use ABP & LoRa WAN Modes for now
+         */
+
+        //basic.showNumber(1)
+        basic.pause(75)
+        //Set to use LoRaWAN Mode
+        serial.writeString("at+mode=0\r\n");
+        serial.readLine()
+
+
+
+        //Display on the screen that LoRa is ready.
+        basic.showString("LoRa Ready")
+
+
+    }
+
+
 
 
 
