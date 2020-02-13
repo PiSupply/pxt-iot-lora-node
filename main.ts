@@ -78,13 +78,13 @@ enum SpreadingFactors {
 
 enum CodingRates {
     //% block="4/5"
-    "4/5" = 1,
+    FourFive = 5,
     //% block="4/6"
-    "4/6" = 1,
+    FourSix = 6,
     //% block="4/7"
-    "4/7" = 1,
+    FourSeven = 7,
     //% block="4/8"
-    "4/8" = 1
+    FourEight = 8
 
 }
 
@@ -559,7 +559,7 @@ namespace IotLoRaNode {
 
         basic.pause(75)
         //Set to use LoRaWAN Mode
-        serial.writeString("at+rf_config="+frequency+","+spreadingfactor+","+bandwidth+","+codingRate+","+preamlen+","+power+"\r\n");
+        serial.writeString("at+rf_config=" + frequency + "," + spreadingfactor + "," + bandwidth + "," + codingRate + "," + preamlen + "," + power + "\r\n");
         serial.readLine()
 
     }
@@ -567,10 +567,10 @@ namespace IotLoRaNode {
     //%blockId="IotLoRaNode_txc" advanced=true block="LoRa P2P Continous transmit:|Count %count|Interval %interval|Data %data"
     //% blockGap=8
     export function txc(count: number, interval: number, data: string): void {
-     
+
         basic.pause(75)
         //Set to use LoRaWAN Mode
-        serial.writeString("at+txc="+count+","+interval+","+data+"\r\n");
+        serial.writeString("at+txc=" + count + "," + interval + "," + data + "\r\n");
         serial.readLine()
 
     }
@@ -619,7 +619,7 @@ namespace IotLoRaNode {
     }
 
 
-//End2
+    //End2
 
 
 
