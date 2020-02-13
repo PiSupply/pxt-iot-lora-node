@@ -77,13 +77,13 @@ enum SpreadingFactors {
 }
 
 enum CodingRates {
-    //% block="4/5"
+    //% block="FourFive"
     FourFive = 5,
-    //% block="4/6"
+    //% block="FourSix"
     FourSix = 6,
-    //% block="4/7"
+    //% block="FourSeven"
     FourSeven = 7,
-    //% block="4/8"
+    //% block="FourEight"
     FourEight = 8
 
 }
