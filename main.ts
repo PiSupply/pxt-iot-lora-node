@@ -555,7 +555,7 @@ namespace IotLoRaNode {
 
     //%blockId="IotLoRaNode_rfconfig" advanced=true block="Configure LoRa P2P:|Frequency %frequency|Spreading Factor %spreadingfactor|Bandwidth %bandwidth|Coding Rate %codingRate|Preamlen %preamlen|Transmission Pwr %power"
     //% blockGap=8
-    export function rfconfig(frequency: number, spreadingfactor: SpreadingFactors, bandwidth: number, codingRate: number, preamlen: number, power: number): void {
+    export function rfconfig(frequency: number, spreadingfactor: SpreadingFactors, bandwidth: number, codingRate: CodingRates, preamlen: number, power: number): void {
 
         basic.pause(75)
         //Set to use LoRaWAN Mode
