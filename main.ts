@@ -508,17 +508,17 @@ namespace IotLoRaNode {
 
         let value = serial.readString()
         let value2 = value.substr(2,4)
-        basic.showString(value2)
-        basic.showNumber(parseInt(value2))
+        //basic.showString(value2)
+        //basic.showNumber(parseInt(value2))
 
 
-        basic.showIcon(IconNames.Yes)
-        basic.pause(100)
+        //basic.showIcon(IconNames.Yes)
+        //basic.pause(100)
         //serial.redirectToUSB()
         //serial.writeString(value)
         //serial.redirect(SerialPin.P14, SerialPin.P15, BaudRate.BaudRate115200);
 
-        return 0;
+        return parseInt(value2);
     }
 
     //%blockId="IotLoRaNode_InitialiseRadioP2P" block="Initialise LoRa Radio for P2P" advanced=true
