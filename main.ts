@@ -100,10 +100,6 @@ enum region {
 }
 
 enum GPIOPins {
-    //% block="PA13"
-    PA13 = 10,
-    //% block="PA14"
-    PA14 = 13,
     //% block="PA15"
     PA15 = 14,
     //% block="PB3"
