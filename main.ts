@@ -507,7 +507,7 @@ namespace IotLoRaNode {
         serial.writeString("at+rd_adc=" + pinNum + "\r\n");
 
         let value = serial.readString()
-        let value2 = value.substr(4,4)
+        let value2 = value.substr(2,4)
         basic.showString(value2)
 
 
