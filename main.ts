@@ -509,6 +509,7 @@ namespace IotLoRaNode {
         let value = serial.readString()
         let value2 = value.substr(2,4)
         basic.showString(value2)
+        basic.showNumber(parseInt(value2))
 
 
         basic.showIcon(IconNames.Yes)
