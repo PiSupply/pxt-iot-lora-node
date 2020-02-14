@@ -507,16 +507,15 @@ namespace IotLoRaNode {
         serial.writeString("at+rd_adc=" + pinNum + "\r\n");
 
         let value = serial.readString()
-        //let value2 = value.toString()
-        //value2 = value2.substr(-4)
+        let value2 = value.substr(4,4)
         basic.showString(value)
 
 
         basic.showIcon(IconNames.Yes)
         basic.pause(100)
-        serial.redirectToUSB()
-        serial.writeString(value)
-        serial.redirect(SerialPin.P14, SerialPin.P15, BaudRate.BaudRate115200);
+        //serial.redirectToUSB()
+        //serial.writeString(value)
+        //serial.redirect(SerialPin.P14, SerialPin.P15, BaudRate.BaudRate115200);
 
         return 0;
     }
