@@ -475,7 +475,7 @@ namespace IotLoRaNode {
         serial.readUntil(serial.delimiters(Delimiters.NewLine))
     }
 
-    //%blockId="IotLoRaNode_GPIOWrite" block="Write GPIO" advanced=true block="Write GPIO Pin Digital:|Pin Number %pinNum|State %state"
+    //%blockId="IotLoRaNode_GPIOWrite" block="Write GPIO" block="Write GPIO Pin Digital:|Pin Number %pinNum|State %state"
     export function loraGPIOWrite(pinNum: GPIOPins, state: boolean): void {
         /**
          * GPIO Write
@@ -486,7 +486,7 @@ namespace IotLoRaNode {
         basic.showString(serial.readUntil(serial.delimiters(Delimiters.NewLine)))
     }
 
-    //%blockId="IotLoRaNode_GPIORead" block="Read GPIO Digital" advanced=true block="Read GPIO Pin Digital:|Pin Number %pinNum"
+    //%blockId="IotLoRaNode_GPIORead" block="Read GPIO Digital" block="Read GPIO Pin Digital:|Pin Number %pinNum"
     export function loraGPIORead(pinNum: GPIOPins): boolean {
         /**
          * GPIO Read
