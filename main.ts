@@ -514,9 +514,9 @@ namespace IotLoRaNode {
 
         basic.showIcon(IconNames.Yes)
         basic.pause(100)
-        serial.redirectToUSB()
-        serial.writeString(value)
-        serial.redirect(SerialPin.P14, SerialPin.P15, BaudRate.BaudRate115200);
+        //serial.redirectToUSB()
+        //serial.writeString(value)
+        //serial.redirect(SerialPin.P14, SerialPin.P15, BaudRate.BaudRate115200);
 
         return 0;
     }
