@@ -399,11 +399,11 @@ namespace IotLoRaNode {
          * SetRegion
          */
 
-
+        basic.showIcon(IconNames.SmallDiamond)
         pins.digitalWritePin(DigitalPin.P16, 1)
         basic.pause(300)
         pins.digitalWritePin(DigitalPin.P16, 0)
-        basic.showIcon(IconNames.SmallDiamond)
+        //basic.showIcon(IconNames.SmallDiamond)
         serial.readLine()
         serial.readLine()
         serial.readLine()
