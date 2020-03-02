@@ -403,10 +403,12 @@ namespace IotLoRaNode {
         pins.digitalWritePin(DigitalPin.P16, 1)
         basic.pause(300)
         pins.digitalWritePin(DigitalPin.P16, 0)
+        basic.showIcon(IconNames.SmallDiamond)
         serial.readLine()
         serial.readLine()
         serial.readLine()
         basic.pause(75)
+
         serial.writeString("at+band=" + regionsList[regionVal] + "\r\n");
         serial.readUntil(serial.delimiters(Delimiters.NewLine))
         basic.showIcon(IconNames.Diamond)
@@ -507,7 +509,7 @@ namespace IotLoRaNode {
         serial.writeString("at+rd_adc=" + pinNum + "\r\n");
 
         let value = serial.readString()
-        let value2 = value.substr(2,4)
+        let value2 = value.substr(2, 4)
         //basic.showString(value2)
         //basic.showNumber(parseInt(value2))
 
