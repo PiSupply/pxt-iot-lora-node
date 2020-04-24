@@ -101,11 +101,14 @@ enum region {
 
 enum euFreqs {
     //% block="868.1"
-    EU8681 = 0,
+    EU8681 = 1,
     //% block="868.3"
-    EU8683 = 1,
-    //% block="868.3"
-    EU8685 = 2
+    EU8683 = 2,
+    //% block="868.5"
+    EU8685 = 4,
+    //% block="ALL"
+    EUALL = 7
+    
 }
 
 enum GPIOPins {
@@ -627,7 +630,7 @@ namespace IotLoRaNode {
 
     }
 
-    //%blockId="IotLoRaNode_chmask_eu" advanced=true block="EU Fixed Freq: %euFreq"
+    //%blockId="IotLoRaNode_chmask_eu" advanced=true block="EU Set Freq: %euFreq"
     //% blockGap=8
     export function IotLoRaNode_chmask_eu(eufreq: euFreqs): void {
 
