@@ -627,7 +627,7 @@ namespace IotLoRaNode {
 
     }
 
-    //%blockId="IotLoRaNode_chmask_eu" advanced=true block="Set SF: %euFreq"
+    //%blockId="IotLoRaNode_chmask_eu" advanced=true block="EU Fixed Freq: %euFreq"
     //% blockGap=8
     export function IotLoRaNode_chmask_eu(eufreq: euFreqs): void {
 
