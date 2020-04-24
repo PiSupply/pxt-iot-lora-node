@@ -99,6 +99,15 @@ enum region {
     AS92X = 3
 }
 
+enum euFreqs {
+    //% block="868.1"
+    EU8681 = 0,
+    //% block="868.3"
+    EU8683 = 1,
+    //% block="868.3"
+    EU8685 = 2
+}
+
 enum GPIOPins {
     //% block="PA15"
     PA15 = 14,
@@ -617,6 +626,19 @@ namespace IotLoRaNode {
         serial.readLine()
 
     }
+
+    //%blockId="IotLoRaNode_chmask_eu" advanced=true block="Set SF: %euFreq"
+    //% blockGap=8
+    export function IotLoRaNode_chmask_eu(eufreq: euFreqs): void {
+
+        basic.pause(75)
+        //Set to use single channel gateway
+
+        serial.writeString("at+set_config=ch_mask:0,000" + eufreq.toString() + "\r\n");
+        serial.readLine()
+
+    }
+
 
 
     //End2
