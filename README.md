@@ -22,7 +22,7 @@ You must fill out the Device Address, NWSK / Network Session Key & Application S
 ### Data Adders
 These blocks add Data to the payload, the payload is a string variable which gets the correct byte values for the specified sensor with these blocks.
 Each block can specifiy the "channel" that it is on, this is so when the decoder decodes it the sensor is on the same "channel" each time.
-Each sensor should be on its own unique channel between one to nine.
+Each sensor should be on its own unique channel between one to twenty.
 #### Add Digital Value
 This block can add a digital value of either ```true``` or ```false```.
 
@@ -43,7 +43,7 @@ TTN Will decode this value as an analogue in with the decoded value displayed.
 This block will add an analogue value similar to the analogue value method. However once decoded will display in degrees C.
 
 ```sig
-IoTLoRaNode.tempertureValue(0, channels.One)
+IoTLoRaNode.temperatureValue(0, channels.One)
 ```
 TTN will decode this as a Degrees C value in the decoder.
 
