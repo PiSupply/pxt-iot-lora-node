@@ -4,7 +4,8 @@
     "description": "Package for Pi Supply IoT LoRa Node",
     "license": "GPL V3",
     "dependencies": {
-        "core": "*"
+        "core": "*",
+        "microphone": "*"
     },
     "files": [
         "README.md",
@@ -19,6 +20,12 @@
         "test.ts"
     ],
     "public": true,
-    "installedVersion": "workspace:cd4adbd5-dd2e-4f3c-d638-34c081471f27",
+    "targetVersions": {
+        "target": "4.0.18",
+        "targetId": "microbit"
+    },
+    "supportedTargets": [
+        "microbit"
+    ],
     "preferredEditor": "tsprj"
 }
