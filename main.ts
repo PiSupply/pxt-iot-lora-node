@@ -149,7 +149,7 @@ namespace IotLoRaNode {
         * First we need to configure the serial port to use the pins and reset the radio
         */
         pins.digitalWritePin(DigitalPin.P16, 1)
-        basic.pause(300)
+        basic.pause(1000)
         pins.digitalWritePin(DigitalPin.P16, 0)
         serial.readLine()
         serial.readLine()
@@ -191,6 +191,16 @@ namespace IotLoRaNode {
         serial.writeString("at+set_config=dr:" + datarate + "\r\n");
         serial.readLine()
 
+        // again a reset to store the data in RAK811
+        basic.pause(75)
+        pins.digitalWritePin(DigitalPin.P16, 1)
+        basic.pause(1000)
+        pins.digitalWritePin(DigitalPin.P16, 0)
+        serial.readLine()
+        serial.readLine()
+        serial.readLine()
+
+
         //basic.showNumber(6)
         basic.pause(75)
         //"Join" the LoRaWAN Network in ABP Mode
@@ -210,7 +220,7 @@ namespace IotLoRaNode {
         * First we need to configure the serial port to use the pins and reset the radio
         */
         pins.digitalWritePin(DigitalPin.P16, 1)
-        basic.pause(300)
+        basic.pause(1000)
         pins.digitalWritePin(DigitalPin.P16, 0)
         serial.readLine()
         serial.readLine()
@@ -249,6 +259,14 @@ namespace IotLoRaNode {
         basic.pause(75)
         //Set the data rate
         serial.writeString("at+set_config=dr:0\r\n");
+        serial.readLine()
+
+        // again a reset to store the data in RAK811
+        pins.digitalWritePin(DigitalPin.P16, 1)
+        basic.pause(1000)
+        pins.digitalWritePin(DigitalPin.P16, 0)
+        serial.readLine()
+        serial.readLine()
         serial.readLine()
 
         //basic.showNumber(6)
