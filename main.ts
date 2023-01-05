@@ -14,7 +14,7 @@
 *
 * You should have received a copy of the GNU General Public License
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
-* Last Updated 2020-02-13-1520
+* Last Updated 2022-03-10 0931
 */
 
 enum Channels {
@@ -108,7 +108,7 @@ enum euFreqs {
     EU8685 = 4,
     //% block="ALL"
     EUALL = 7
-    
+
 }
 
 enum GPIOPins {
@@ -145,57 +145,76 @@ namespace IotLoRaNode {
     //%blockId="IotLoRaNode_InitialiseRadioABP" block="Initialise LoRa Radio via ABP:|Device Address %deviceaddress|Network Session Key %netswk|App Session Key %appswk|SF %datarate"
     //% blockGap=8
     export function InitialiseRadio(devaddress: string, netswk: string, appswk: string, datarate: SpreadingFactors): void {
-        /**
-        * First we need to configure the serial port to use the pins and reset the radio
-        */
-        pins.digitalWritePin(DigitalPin.P16, 1)
-        basic.pause(300)
-        pins.digitalWritePin(DigitalPin.P16, 0)
-        serial.readLine()
-        serial.readLine()
-        serial.readLine()
 
-        //basic.showNumber(0)
+        /**
+        * First we need to  reset the radio
+        * it will respond with 3 lines:
+        *
+        * 1 Welcome to RAK811
+        * 2
+        * 3 Selected LoraWAN 1.0.2 Region: EU868
+        *
+        */
+        basic.clearScreen()
+        led.plot(2, 4)
+        pins.digitalWritePin(DigitalPin.P16, 1)
+        basic.pause(500)
+        pins.digitalWritePin(DigitalPin.P16, 0)
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
 
         /**
          * For this we are only going to use ABP & LoRa WAN Modes for now
+         * it will respond with 5 lines:
+         *
+         * 1
+         * 2 
+         * 3 Selected LoraWAN 1.0.2 Region: EU868
+         * 4 
+         * 5 OK
+         * 
          */
-
-        //basic.showNumber(1)
+        led.plot(2, 3)
         basic.pause(75)
         //Set to use LoRaWAN Mode
         serial.writeString("at+mode=0\r\n");
-        serial.readLine()
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
 
-        //basic.showNumber(2)
+        led.plot(2, 2)
         basic.pause(75)
         //Set Device Address
         serial.writeString("at+set_config=dev_addr:" + devaddress + "\r\n");
-        serial.readLine()
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
 
-        //basic.showNumber(3)
+        led.plot(2, 1)
         basic.pause(75)
         //Set the network session key
         serial.writeString("at+set_config=nwks_key:" + netswk + "\r\n");
-        serial.readLine()
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
 
-        //basic.showNumber(4)
+        led.plot(1, 0)
         basic.pause(75)
         //Set the application session key
         serial.writeString("at+set_config=apps_key:" + appswk + "\r\n");
-        serial.readLine()
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
 
-        //basic.showNumber(5)
+        led.plot(3, 0)
         basic.pause(75)
         //Set the data rate
         serial.writeString("at+set_config=dr:" + datarate + "\r\n");
-        serial.readLine()
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
 
-        //basic.showNumber(6)
+
+        led.plot(2, 0)
         basic.pause(75)
         //"Join" the LoRaWAN Network in ABP Mode
         serial.writeString("at+join=abp\r\n");
-        serial.readLine()
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
 
         //Display on the screen that LoRa is ready.
         basic.showString("LoRa Ready")
@@ -207,55 +226,77 @@ namespace IotLoRaNode {
     //% blockGap=8
     export function InitialiseRadioOTAA(deveui: string, appeui: string, appkey: string): void {
         /**
-        * First we need to configure the serial port to use the pins and reset the radio
+        * First we need to  reset the radio
+        * it will respond with 4 lines:
+        *
+        * 1 Welcome to RAK811
+        * 2
+        * 3 Selected LoraWAN 1.0.2 Region: EU868
+        * 4
+        *
         */
-        pins.digitalWritePin(DigitalPin.P16, 1)
-        basic.pause(300)
-        pins.digitalWritePin(DigitalPin.P16, 0)
-        serial.readLine()
-        serial.readLine()
-        serial.readLine()
 
-        //basic.showNumber(0)
+        basic.clearScreen()
+        led.plot(2, 4)
+        pins.digitalWritePin(DigitalPin.P16, 1)
+        basic.pause(500)
+        pins.digitalWritePin(DigitalPin.P16, 0)
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
 
         /**
-         * For this we are only going to use ABP & LoRa WAN Modes for now
+         * For this we are only going to use OTAA & LoRa WAN Modes for now
+         * it will respond with 5 lines:
+         *
+         * 1
+         * 2
+         * 3 Selected LoraWAN 1.0.2 Region: EU868
+         * 4
+         * 5 OK
+         *
          */
 
-        //basic.showNumber(1)
+        led.plot(2, 3)
         basic.pause(75)
         //Set to use LoRaWAN Mode
         serial.writeString("at+mode=0\r\n");
-        serial.readLine()
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
 
-        //basic.showNumber(2)
+        led.plot(2, 2)
         basic.pause(75)
         //Set Device Address
         serial.writeString("at+set_config=dev_eui:" + deveui + "\r\n");
-        serial.readLine()
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
 
-        //basic.showNumber(3)
+        led.plot(2, 1)
         basic.pause(75)
         //Set the network session key
         serial.writeString("at+set_config=app_eui:" + appeui + "\r\n");
-        serial.readLine()
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
 
-        //basic.showNumber(4)
+        led.plot(1, 0)
         basic.pause(75)
         //Set the application session key
         serial.writeString("at+set_config=app_key:" + appkey + "\r\n");
-        serial.readLine()
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
 
+        led.plot(3, 0)
         basic.pause(75)
         //Set the data rate
         serial.writeString("at+set_config=dr:0\r\n");
-        serial.readLine()
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
 
-        //basic.showNumber(6)
+
+        led.plot(2, 0)
         basic.pause(75)
         //"Join" the LoRaWAN Network in ABP Mode
         serial.writeString("at+join=otaa\r\n");
-        serial.readLine()
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
 
         //Display on the screen that LoRa is ready.
         basic.showString("LoRa Ready")
@@ -412,24 +453,35 @@ namespace IotLoRaNode {
          */
 
         basic.showIcon(IconNames.SmallDiamond)
+        /**
+        * First we need to  reset the radio
+        * it will respond with 3 lines:
+        *
+        * 1 Welcome to RAK811
+        * 2
+        * 3 Selected LoraWAN 1.0.2 Region: EU868
+        *
+        */
+
         pins.digitalWritePin(DigitalPin.P16, 1)
-        basic.pause(300)
+        basic.pause(500)
         pins.digitalWritePin(DigitalPin.P16, 0)
-        //basic.showIcon(IconNames.SmallDiamond)
-        serial.readLine()
-        serial.readLine()
-        serial.readLine()
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
         basic.pause(75)
+
 
         serial.writeString("at+band=" + regionsList[regionVal] + "\r\n");
         serial.readUntil(serial.delimiters(Delimiters.NewLine))
         basic.showIcon(IconNames.Diamond)
+
         pins.digitalWritePin(DigitalPin.P16, 1)
-        basic.pause(300)
+        basic.pause(500)
         pins.digitalWritePin(DigitalPin.P16, 0)
-        serial.readLine()
-        serial.readLine()
-        serial.readLine()
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
         basic.showIcon(IconNames.Yes)
         //basic.showNumber(1)
         if (regionsList[regionVal] == "US915") {
@@ -642,12 +694,5 @@ namespace IotLoRaNode {
 
     }
 
-
-
     //End2
-
-
-
-
-
 }
