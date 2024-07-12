@@ -17,6 +17,13 @@
 * Last Updated 2022-03-10 0931
 */
 
+/*
+HK
+
+DOCS: https://github.com/RAKWireless/RAK811_LoRaNode/blob/master/doc/Software/RAK811%C2%A0Lora%C2%A0AT%C2%A0Command%C2%A0V1.4.pdf
+
+*/
+
 enum Channels {
     //% block="One"    
     One = 1,
@@ -61,30 +68,32 @@ enum Channels {
 
 }
 enum SpreadingFactors {
+    //% block="Six"
+    Six = 6,
     //% block="Seven"
-    Seven = 5,
+    Seven = 7,
     //% block="Eight"
-    Eight = 4,
+    Eight = 8,
     //% block="Nine"
-    Nine = 3,
+    Nine = 9,
     //% block="Ten"
-    Ten = 2,
+    Ten = 10,
     //% block="Eleven"
-    Eleven = 1,
+    Eleven = 11,
     //% block="Twelve"
-    Twelve = 0
+    Twelve = 12
 
 }
 
 enum CodingRates {
     //% block="4/5"
-    FourFive = 5,
+    FourFive = 1,
     //% block="4/6"
-    FourSix = 6,
+    FourSix = 2,
     //% block="4/7"
-    FourSeven = 7,
+    FourSeven = 3,
     //% block="4/8"
-    FourEight = 8
+    FourEight = 4
 
 }
 
@@ -644,7 +653,7 @@ namespace IotLoRaNode {
 
         basic.pause(75)
         //Set to use LoRaWAN Mode
-        serial.writeString("at+rxc\r\n");
+        serial.writeString("at+rxc=1\r\n");
         serial.readLine()
 
     }
@@ -655,7 +664,7 @@ namespace IotLoRaNode {
 
         basic.pause(75)
         //Set to use LoRaWAN Mode
-        serial.writeString("at+txstop\r\n");
+        serial.writeString("at+tx_stop\r\n");
         serial.readLine()
 
     }
@@ -666,7 +675,7 @@ namespace IotLoRaNode {
 
         basic.pause(75)
         //Set to use LoRaWAN Mode
-        serial.writeString("at+rxstop\r\n");
+        serial.writeString("at+rx_stop\r\n");
         serial.readLine()
 
     }
